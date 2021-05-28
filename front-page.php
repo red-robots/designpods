@@ -56,7 +56,7 @@
 	<div class="wrapper sm">
 		<div class="flexwrapper">
 			<div class="col">
-				<img class="doughnut" src="<?php imageDIR('/animated/doughnut.gif') ?>" alt="doughnut" />
+				<img class="doughnut" src="<?php imageDIR('animated/doughnut.gif') ?>" alt="doughnut" />
 			</div>
 		</div>
 			
