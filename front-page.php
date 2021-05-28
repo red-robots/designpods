@@ -39,10 +39,9 @@
 				<div class="col right animatedEl">
 					<div class="thinking wow fadeInRight" data-wow-duration="0.6s" data-wow-delay="0.8s">
 						<?php  
-							//include( locate_template('images/animated/me_thinking.svg') ); 
+							include( locate_template('images/animated/me_thinking.svg') ); 
 							$thinkingImg = get_bloginfo("template_url") ."/images/animated/me_thinking.svg";
 						?>
-							<img src="<?php echo $thinkingImg ?>" alt="">
 					</div>
 				</div>
 
