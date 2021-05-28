@@ -166,6 +166,7 @@ gulp.task('styles', function () {
 gulp.task( 'vendorsJs', function() {
 	//gulp.src( jsVendorSRC )
 	gulp.src( [
+		'./assets/js/vendors/parallax.js',
 		'./assets/js/vendors/wow.js',
 		'./assets/js/vendors/blocks.js'
 		] )

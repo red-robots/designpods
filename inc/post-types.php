@@ -6,33 +6,12 @@ add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
         array(
-            'post_type' => 'locations',
-            'menu_name' => 'Locations',
-            'plural'    => 'Locations',
-            'single'    => 'Location',
+            'post_type' => 'projects',
+            'menu_name' => 'Projects',
+            'plural'    => 'Projects',
+            'single'    => 'Project',
             'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'faculty',
-            'menu_name' => 'Faculties',
-            'plural'    => 'Faculties',
-            'single'    => 'Faculty',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'programs',
-            'menu_name' => 'Programs',
-            'plural'    => 'Programs',
-            'single'    => 'Program',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'testimonials',
-            'menu_name' => 'Testimonials',
-            'plural'    => 'Testimonials',
-            'single'    => 'Testimonial',
-            'supports'  => array('title','editor')
-        ),
+        )
     );
     
     if($post_types) {

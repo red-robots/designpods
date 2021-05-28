@@ -1,0 +1,23 @@
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float_shadow {
+  0% {
+    box-shadow: 0 60px 34px -9px rgba(0,0,0,0.15);
+  }
+  50% {
+    box-shadow: 0 20px 35px 0 rgba(0,0,0,0.2);
+  }
+  100% {
+    box-shadow: 0 60px 34px -9px rgba(0,0,0,0.15);
+  }
+}

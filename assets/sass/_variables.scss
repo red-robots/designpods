@@ -3,22 +3,26 @@ $color_link_visited: purple;
 $color_link_hover: midnightblue;
 $color_text_main: #404040;
 $color_primary: #FCF593;
+$color_light_pink: #FCEAEA;
+$color_pink: #f88899;
+$color_yellow: #FEEB03;
 
-$font_primary: 'PT Sans Narrow', sans-serif;
-$font_secondary: 'Passion One', cursive;
+$font_primary: 'proxima-soft-condensed','PT Sans Narrow', sans-serif;
+$font_secondary: moret, serif;
 $font_code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font_pre: "Courier 10 Pitch", Courier, monospace;
 
 $tabwidth: 600px;
 $midwidth: 900px;
 $deskwidth: 1200px;
+$xxl: 1400px;
 
 @mixin xxs { @media (min-width: $portrait) { @content; } }
 @mixin xs { @media (min-width: $xswidth) { @content; } }
 @mixin tab { @media (min-width: $tabwidth) { @content; } }
 @mixin mid { @media (min-width: $midwidth) { @content; } }
-@mixin desk {  @media (min-width: $deskwidth) { @content; } }
-@mixin xxl {  @media (min-width: $xxl) { @content; } }
+@mixin desk { @media (min-width: $deskwidth) { @content; } }
+@mixin xxl { @media (min-width: $xxl) { @content; } }
 
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
@@ -130,3 +134,5 @@ $deskwidth: 1200px;
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+

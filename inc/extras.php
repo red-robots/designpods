@@ -392,3 +392,7 @@ function get_instagram_setup() {
     }
     return $option;
 }
+
+function imageDIR($fileName) {
+    echo get_bloginfo("template_url") . "/images/" . $fileName;
+}
