@@ -1750,8 +1750,9 @@ div.more{margin-top:25px}
 .row-3 .col.right{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .row-3 .col.right .text{width:100%}
 .row-3 .inner{width:100%;float:left;position:relative}
-.row-3 .inner:before{content:"";display:block;width:5vw;height:5vw;position:absolute;top:45px;right:4vw;background-image:url("images/squiggles/png/group_3.png");background-position:center;background-repeat:no-repeat;background-size:contain}
-.row-3 .inner:after{content:"";display:block;width:2vw;height:2vw;position:absolute;bottom:5vw;left:5vw;background-image:url("images/squiggles/png/line_star.png");background-position:center;background-repeat:no-repeat;background-size:contain}
+.row-3 .inner .art1{display:block;width:60px;height:60px;position:absolute;top:24px;right:70px}
+.row-3 .inner .art1 svg{width:100%}
+.row-3 .inner:after{content:"";display:block;width:2vw;height:2vw;position:absolute;bottom:5vw;left:4vw;background-image:url("images/squiggles/png/line_star.png");background-position:center;background-repeat:no-repeat;background-size:contain}
 .row-3 .text h2{margin:0;font-size:5.2vw;font-weight:400;line-height:1.1}
 .row-4{position:relative;background:#acd5ad;z-index:14}
 .row-4:before{content:"";width:100%;height:70px;background:#FFF;position:absolute;top:0;left:0}
@@ -1783,7 +1784,8 @@ div.more{margin-top:25px}
 .row-5 .illustrations .col{width:100%}
 @media(min-width:600px){.row-5 .illustrations .col{width:50%}
 }.row-5 .illustrations .col.graphic{width:100%;position:relative}
-.row-5 .illustrations .col.graphic:after{content:"";display:block;width:70px;height:70px;position:absolute;top:10px;right:-10px;background-image:url("images/squiggles/png/group_2.png");background-position:center;background-repeat:no-repeat;background-size:contain}
+.row-5 .illustrations .col.graphic span.star{display:block;width:70px;height:70px;position:absolute;top:10px;right:-10px;z-index:20}
+.row-5 .illustrations .col.graphic span.star svg{width:100%}
 @media(min-width:600px){.row-5 .illustrations .col.graphic{width:40%}
 }.row-5 .illustrations .col.graphic img{width:100%;height:auto;position:relative;left:20%;-webkit-transform:translateY(-20%);-ms-transform:translateY(-20%);transform:translateY(-20%)}
 @media(min-width:600px){.row-5 .illustrations .col.graphic img{width:250%;left:0;-webkit-transform:none;-ms-transform:none;transform:none}

@@ -40,7 +40,6 @@
 					<div class="thinking wow fadeInRight" data-wow-duration="0.6s" data-wow-delay="0.8s">
 						<?php  
 							include( locate_template('images/svg/me_thinking.svg') ); 
-							$thinkingImg = get_bloginfo("template_url") ."/images/animated/me_thinking.svg";
 						?>
 					</div>
 				</div>
@@ -55,7 +54,10 @@
 	<div class="wrapper sm">
 		<div class="flexwrap">
 			<div class="col left fadeIn wow" data-wow-duration="0.5s">
-				<div class="inner">
+				<div class="inner doughnut-graphic">
+					<span class="art1">
+						<?php include( locate_template('images/animated/stars.svg') ) ?>
+					</span>
 					<img class="doughnut" src="<?php imageDIR('animated/doughnut.gif') ?>" alt="doughnut" />
 				</div>
 			</div>
@@ -108,6 +110,7 @@
 		<div class="illustrations">
 			<div class="flexwrap">
 				<div class="col graphic wow fadeIn" data-wow-delay="0.3s">
+					<span class="star"><?php include( locate_template('images/animated/traingle_x.svg') );  ?></span>
 					<img src="<?php imageDIR('animated/pop_desktop.gif') ?>" alt="">
 				</div>
 				<div class="col text wow fadeIn" data-wow-delay="0.4s">

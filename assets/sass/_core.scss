@@ -622,19 +622,30 @@ div.more {
 		width: 100%;
 		float: left;
 		position: relative;
-		&:before {
-			content:"";
+		.art1 {
 			display: block;
-			width: 5vw;
-			height: 5vw;
+			width: 60px;
+			height: 60px;
 			position: absolute;
-	    top: 45px;
-    	right: 4vw;
-			background-image: url("images/squiggles/png/group_3.png");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: contain;
+			top: 24px;
+			right: 70px;
+			svg {
+				width: 100%;
+			}
 		}
+		// &:before {
+		// 	content:"";
+		// 	display: block;
+		// 	width: 5vw;
+		// 	height: 5vw;
+		// 	position: absolute;
+	 //    top: 45px;
+  //   	right: 4vw;
+		// 	background-image: url("images/squiggles/png/group_3.png");
+		// 	background-position: center;
+		// 	background-repeat: no-repeat;
+		// 	background-size: contain;
+		// }
 		&:after {
 			content:"";
 			display: block;
@@ -642,7 +653,7 @@ div.more {
 			height: 2vw;
 			position: absolute;
 	    bottom: 5vw;
-    	left: 5vw;
+    	left: 4vw;
 			background-image: url("images/squiggles/png/line_star.png");
 			background-position: center;
 			background-repeat: no-repeat;
@@ -809,18 +820,21 @@ div.more {
 			&.graphic {
 				width: 100%;
 				position: relative;
-				&:after {
-					content:"";
+				span.star {
 					display: block;
 					width: 70px;
 					height: 70px;
 					position: absolute;
 			    top: 10px;
 		    	right: -10px;
-					background-image: url("images/squiggles/png/group_2.png");
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: contain;
+		    	z-index: 20;
+					// background-image: url("images/squiggles/png/group_2.png");
+					// background-position: center;
+					// background-repeat: no-repeat;
+					// background-size: contain;
+					svg {
+						width: 100%;
+					}
 				}
 				@include tab {
 					width: 40%;
