@@ -157,7 +157,7 @@
 			</div>
 
 			<div class="graphic">
-				<div class="graphic-svg wow fadeInUp" data-wow-delay="0.3s">
+				<div class="graphic-svg wow fadeInUp" data-wow-delay="0.5s">
 					<?php include( locate_template('images/svg/rabbit_hat.svg') );  ?>
 				</div>
 			</div>

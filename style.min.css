@@ -1744,9 +1744,10 @@ div.more{margin-top:25px}
 .more-btn.get-started span{font-size:1.5rem;position:relative;top:-2px;right:-5px}
 .more-btn:hover{color:#f88899}
 .row-3{background:#FFF;position:relative;z-index:11;padding:50px 0 0;z-index:12}
-.row-3 .col{width:100%}
-@media(min-width:600px){.row-3 .col{width:50%}
-}.row-3 .col img.doughnut{width:100%;height:auto;float:left}
+.row-3 .col{width:100%;position:relative}
+@media(min-width:600px){.row-3 .col.left{width:40%;left:-5vw}
+}@media(min-width:600px){.row-3 .col.right{width:60%;right:-2vw}
+}.row-3 .col img.doughnut{width:120%;height:auto;float:left}
 .row-3 .col.right{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .row-3 .col.right .text{width:100%}
 .row-3 .inner{width:100%;float:left;position:relative}
@@ -1774,6 +1775,7 @@ div.more{margin-top:25px}
 @media(min-width:600px){.row-4 .illustration-logo .col.graphic{top:0}
 }.row-4 .illustration-logo .col.graphic svg{width:100%}
 @media(min-width:600px){.row-4 .illustration-logo .col.text{padding-left:3vw}
+}@media(min-width:900px){.row-4 .illustration-logo .col.text{padding-left:5vw}
 }.row-4 .more-btn.get-started:hover{color:#FFF}
 .row-5{position:relative;background:#FFF;z-index:14;padding-top:50px;padding-bottom:50px}
 .row-5 .flexwrap.projects{margin-left:-3vw;margin-right:-3vw;z-index:5;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -1793,6 +1795,7 @@ div.more{margin-top:25px}
 @media(min-width:600px){.row-5 .illustrations .col.text{width:60%;padding-left:5vw}
 }.row-5 .illustrations .col.text .wrap{width:100%}
 .row-5 .more-btn.get-started:hover{color:#FFF}
+.row-5 .clients{margin-top:30px}
 .row-5 .clients .logos{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 -10px}
 .row-5 .clients span{display:inline-block;margin:6px 0;padding:0 10px}
 .row-5 .clients img.all{width:100%;height:auto}

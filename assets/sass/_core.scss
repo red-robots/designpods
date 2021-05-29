@@ -603,11 +603,21 @@ div.more {
 	z-index: 12;
 	.col {
 		width: 100%;
-		@include tab {
-			width: 50%;
+		position: relative;
+		&.left {
+			@include tab {
+				width: 40%;
+				left: -5vw;
+			}
+		}
+		&.right {
+			@include tab {
+				width: 60%;
+				right: -2vw;
+			}
 		}
 		img.doughnut {
-			width: 100%;
+			width: 120%;
 			height: auto;
 			float: left;
 		}
@@ -774,6 +784,9 @@ div.more {
 				@include tab {
 					padding-left: 3vw;
 				}
+				@include mid {
+					padding-left: 5vw;
+				}
 			}
 		}
 	}
@@ -874,6 +887,7 @@ div.more {
 		}
 	}
 	.clients {	
+		margin-top: 30px;
 		.logos {
 			@include flexbox();
 			@include flexbox-align-items(center);
