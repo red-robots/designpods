@@ -130,7 +130,7 @@
 	<div class="wrapper sm">
 		<div class="flexwrap">
 			<div class="skills">
-				<div class="wrap">
+				<div class="wrap wow fadeIn">
 					<h2 class="t1 h2 font2">
 						Abracadabra!<BR>
 						I'm a full-service Lindsay.
@@ -154,7 +154,9 @@
 			</div>
 
 			<div class="graphic">
-				<?php include( locate_template('images/svg/rabbit_hat.svg') );  ?>
+				<div class="graphic-svg wow fadeInUp" data-wow-delay="0.3s">
+					<?php include( locate_template('images/svg/rabbit_hat.svg') );  ?>
+				</div>
 			</div>
 		</div>
 	</div>
