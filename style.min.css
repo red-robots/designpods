@@ -1760,7 +1760,7 @@ div.more{margin-top:25px}
 .row-4 .box{width:33%;padding:3vw}
 .row-4 .box a{display:block;width:100%;float:left}
 @media(min-width:468px){.row-4 .box{width:33.33%}
-}.row-4 .box img{width:100%;height:auto;box-shadow:0 14px 21px -11px rgba(0,0,0,0.4);border:1px solid #000;-webkit-transition:all ease .3s;transition:all ease .3s}
+}.row-4 .box img{width:100%;height:auto;box-shadow:0 14px 30px -8px rgba(0,0,0,0.4);border:1px solid #000;-webkit-transition:all ease .3s;transition:all ease .3s}
 .row-4 .box a:hover img{-webkit-transform:rotate(3deg);-ms-transform:rotate(3deg);transform:rotate(3deg)}
 .row-4 .box:first-child a:hover img{-webkit-transform:rotate(-5deg);-ms-transform:rotate(-5deg);transform:rotate(-5deg)}
 .row-4 .box:last-child a:hover img{-webkit-transform:rotate(5deg);-ms-transform:rotate(5deg);transform:rotate(5deg)}
@@ -1807,7 +1807,8 @@ div.more{margin-top:25px}
 body.hide-row-1 .row-1 .titlediv h1{opacity:0;-webkit-transform:translateY(-10vh);-ms-transform:translateY(-10vh);transform:translateY(-10vh)}
 body.open-menu #page{overflow:hidden}
 @media(min-width:600px){body.open-menu #page{overflow:auto}
-}.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:30px;padding-bottom:30px}
+}body.scrolled #row1-title{-webkit-transform:translateY(5%);-ms-transform:translateY(5%);transform:translateY(5%)}
+.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:30px;padding-bottom:30px}
 .site-footer:before{content:"";display:block;width:100%;height:20px;background-color:#fceaea;position:absolute;top:-5px;left:0}
 .site-footer .social-media{margin:0;padding:0;text-align:center}
 @media(min-width:600px){.site-footer .social-media{text-align:right}

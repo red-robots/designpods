@@ -695,7 +695,7 @@ div.more {
 		img {
 			width: 100%;
 			height: auto;
-			box-shadow: 0 14px 21px -11px rgba(0,0,0,0.4);
+			box-shadow: 0 14px 30px -8px rgba(0,0,0,0.4);
 			border: 1px solid #000;
 			transition: all ease .3s;
 		}
@@ -941,6 +941,11 @@ body.open-menu {
 		@include tab {
 			overflow: auto;
 		}
+	}
+}
+body.scrolled {
+	#row1-title {
+		transform: translateY(5%);
 	}
 }
 
