@@ -16,6 +16,7 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 		$("#siteMenu").toggleClass('open');
 		$("#navigation").removeAttr("style");
+		$("body").toggleClass('open-menu');
 		if( $("#navigation").hasClass("open") ) {
 			$("#navigation").removeClass("open");
 		} else {
@@ -26,6 +27,7 @@ jQuery(document).ready(function ($) {
 	$("#closeNav").click(function(e){
 		e.preventDefault();
 		$("#siteMenu").removeClass("open");
+		$("body").removeClass('open-menu');
 		$("#navigation").fadeOut(600,function(){
 			$(this).removeClass("open");
 		});
@@ -42,11 +44,16 @@ jQuery(document).ready(function ($) {
     }
 
    	if( $('div.row-2').length>0 ) {
-   		if ($(window).scrollTop() >= (($(document).height() - $(window).height()) - $('div.row-2').innerHeight())) {
-	    	$("body").addClass("reached-bottom");
-	  	} else {
-	  		$("body").removeClass("reached-bottom");
-	  	}
+   	// 	if ($(window).scrollTop() >= (($(document).height() - $(window).height()) - $('div.row-2').innerHeight())) {
+	   //  	$("body").addClass("reached-bottom");
+	  	// } else {
+	  	// 	$("body").removeClass("reached-bottom");
+	  	// }
+	  	if (scroll >= $(".row-1 .text").height() ) {
+	      $("body").addClass("hide-row-1");
+	    } else {
+	      $("body").removeClass("hide-row-1");
+	    }
    	}
 
   });

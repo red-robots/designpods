@@ -92,10 +92,8 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
     hyphens: none;
     page-break-inside: avoid;
 }
-* {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+*, ::after, ::before {
+    box-sizing: border-box;
 }
 pre {
 	font-family: $font_pre;
@@ -129,9 +127,16 @@ pre {
 		z-index: 100000; /* Above WP toolbar. */
 	}
 }
-html,body,.site {
-	position: relative;
+body {
 	overflow-x: hidden;
+	overflow-y: auto;
+}
+html,body,.site {
+	height: 100%;
+	position: relative;
+}
+.site {
+
 }
 body {
 	font-family: $font_primary;
@@ -142,9 +147,12 @@ body {
 a,textarea,input,button,select {
 	transition: all ease .3s;
 }
+.font2 {
+	font-family: $font_secondary!important;
+}
 .wrapper {
 	margin: 0 auto;
-	max-width: 1300px;
+	max-width: 1100px;
 	width: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -157,12 +165,16 @@ a,textarea,input,button,select {
 	width: 110px;
 	height: 110px;
 	position: fixed;
-	top: 5vh;
-	right: 5vw;
+	top: 35px;
+	right: 65px;
 	z-index: 200;
 	opacity: 0;
 	transform: translateY(100vh);
 	transition: all ease 1s;
+	@include xs {
+		top: 5vh;
+		right: 5vw;
+	}
 	@include tab {
 		width: 180px;
 		height: 180px;
@@ -255,16 +267,57 @@ a,textarea,input,button,select {
 	}
 }
 
+.social-media {
+	text-align: center;
+	padding:0 30px;
+	margin-top: 10vh;
+	a {
+		display: inline-block;
+		text-decoration: none;
+		width: 6vh;
+		height: 6vh;
+		background: #000;
+		border-radius: 100%;
+		color: #FFF;
+		text-align: center;
+		position: relative;
+		font-size: 20px;
+		line-height: 1;
+		margin: 0 1vh;
+		@include tab {
+			font-size: 1.3vw;
+		}
+		&.instagram {
+			color: $color_yellow2;
+		}
+		&.linkedin {
+			color: $color_pink2;
+		}
+		svg {
+			display: block;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+		&:hover {
+			background: $color_pink3!important;
+			color: #FFF!important;
+		}
+	}
+}
+
 /* Navigation */
 .navigation-screen {
 	width: 100%;
 	height: 100%;
 	position: fixed;
+	overflow: auto;
 	top: 0;
 	left: 0;
-	background: $color_yellow;
+	background: $color_yellow2;
 	z-index: 99999;
-	overflow: auto;
 	display: none;
 	@include animateThis(0.8s);
 	@include animateEffect(fadeOut);
@@ -274,6 +327,8 @@ a,textarea,input,button,select {
 	}
 	.wrapper {
 		height: 100%;
+		padding: 0 0;
+		overflow: hidden;
 	}
 	.menu-wrapper {
 		position: relative;
@@ -291,45 +346,24 @@ a,textarea,input,button,select {
 				font-family: $font_secondary;
 			}
 		}
-		ul.menu > li > a {
-			font-size: 13vh;
-			font-weight: 700;
-			line-height: 1.2;
-		}
-		ul.menu > li > a:hover {
-			color: $color_pink;
-		}
-	}
-}
-
-.social-media {
-	text-align: center;
-	padding:0 30px;
-	margin-top: 10vh;
-	a {
-		display: inline-block;
-		text-decoration: none;
-		width: 6vh;
-		height: 6vh;
-		background: #000;
-		border-radius: 100%;
-		color: #FFF;
-		text-align: center;
-		position: relative;
-		font-size: 1.3vw;
-		line-height: 1;
-		margin: 0 1vh;
-		svg {
+		ul.menu > li {
 			display: block;
 			width: 100%;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translateX(-50%) translateY(-50%);
 		}
-		&:hover {
-			color: $color_pink;
+		ul.menu > li > a {
+			font-size: 8vh;
+			font-weight: 700;
+			line-height: 1.2;
+			@include tab {
+				font-size: 13vh;
+			}
 		}
+		ul.menu > li > a:hover {
+			color: $color_pink3;
+		}
+	}
+	.social-media {
+		padding: 0 0;
 	}
 }
 
@@ -343,8 +377,11 @@ a,textarea,input,button,select {
 	background-size: 70%;
 	position: absolute;
 	top: 5vw;
-	right: 5vw;
+	right: 18vw;
 	z-index: 10;
+	@include xs {
+		right: 5vw;
+	}
 	span {
 		display: block;
 		width: 0;
@@ -365,17 +402,27 @@ body.content-loaded {
 	position: relative;	
 }
 
-.row-1,.row-2, .row-3 {
+.w100 {
 	width: 100%;
 	float: left;
 }
+
+.h2 {
+	font-family: $font_secondary;
+	font-size: 3.5rem;
+	font-weight: normal;
+	line-height: 1;
+	margin: 0 0 20px;
+}
+
 .row-1, .row-1 * {
 	transition: all ease .3s;
 }
 
 .row-1 {
 	height: 100vh;
-	background: $color_light_pink;
+	background: $color_pink1;
+	overflow: hidden;
 	.text,.wrapper {
 		height: 100%;
 	}
@@ -491,13 +538,6 @@ body.content-loaded {
 	.col.left {
 		@include flexgroup-center();
 	}
-	.h2 {
-		font-family: $font_secondary;
-		font-size: 3.5rem;
-		font-weight: normal;
-		line-height: 1;
-		margin: 0 0 20px;
-	}
 	.balloon-hero,
 	.balloon-hero * {
 		transition: all ease .3s;
@@ -542,8 +582,16 @@ div.more {
 	display: inline-block;
 	text-decoration: none;
 	color: #000;
+	&.get-started {
+		span {
+			font-size: 1.5rem;
+			position: relative;
+			top: -2px;
+			right: -5px;
+		}
+	}
 	&:hover {
-		color: $color_pink;
+		color: $color_pink3;
 	}
 }
 
@@ -551,6 +599,8 @@ div.more {
 	background: #FFF;
 	position: relative;
 	z-index: 11;
+	padding: 50px 0 0;
+	z-index: 12;
 	.col {
 		width: 100%;
 		@include tab {
@@ -559,13 +609,325 @@ div.more {
 		img.doughnut {
 			width: 100%;
 			height: auto;
+			float: left;
+		}
+		&.right {
+			@include flexgroup-center();
+			.text {
+				width: 100%;
+			}
+		}
+	}
+	.inner {
+		width: 100%;
+		float: left;
+		position: relative;
+		&:before {
+			content:"";
+			display: block;
+			width: 5vw;
+			height: 5vw;
+			position: absolute;
+	    top: 45px;
+    	right: 4vw;
+			background-image: url("images/squiggles/png/group_3.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 2vw;
+			height: 2vw;
+			position: absolute;
+	    bottom: 5vw;
+    	left: 5vw;
+			background-image: url("images/squiggles/png/line_star.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+	.text {
+		h2 {
+			margin: 0 0;
+			font-size: 5.2vw;
+			font-weight: 400;
+			line-height: 1.1;
 		}
 	}
 }
 
+.row-4 {
+	position: relative;
+	background: $color_green;
+	z-index: 14;
+	&:before {
+		content:"";
+		width: 100%;
+		height: 70px;
+		background: #FFF;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include xs {
+			height: 20vh;
+		}
+	}
+	.flexwrap.projects {
+		margin-left: -3vw;
+		margin-right: -3vw;
+		z-index: 30;
+		@include flexbox-justify(center);
+	}
+	.box {
+		width: 33%;
+		padding: 3vw;
+		a {
+			display: block;
+			width: 100%;
+			float: left;
+		}
+		@include xs {
+			width: 33.33%;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			box-shadow: 0 14px 21px -11px rgba(0,0,0,0.4);
+			border: 1px solid #000;
+			transition: all ease .3s;
+		}
+		a:hover {
+			img {
+				transform: rotate(3deg);
+			}
+		}
+	}
+	.box:first-child {
+		a:hover {
+			img {
+				transform: rotate(-5deg);
+			}
+		}
+	}
+	.box:last-child {
+		a:hover {
+			img {
+				transform: rotate(5deg);
+			}
+		}
+	}
+	.illustration-logo {
+		width: 100%;
+		float: left;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		position: relative;
+		.top-star {
+			display: block;
+			width: 100px;
+			height: 100px;
+			background-image: url(images/filled_star.png);
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: -68px;
+			left: -10vw;
+			z-index: 20;
+			@include tab {
+				width: 10vw;
+				height: 10vw;
+				top: -140px;
+				left: -5vw;
+			}
+		}
+		.col {
+			width: 100%;
+			@include tab {
+				width: 50%;
+			}
+			&.graphic {
+				position: relative;
+				top: -20px;
+				@include tab {
+					top: 0;
+				}
+				svg {
+					width: 100%;
+				}
+			}
+			&.text {
+				@include tab {
+					padding-left: 3vw;
+				}
+			}
+		}
+	}
+	.more-btn.get-started {
+		&:hover {
+			color: #FFF;
+		}
+	}
+}
 
+.row-5 {
+	position: relative;
+	background: #FFF;
+	z-index: 14;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	.flexwrap.projects {
+		margin-left: -3vw;
+		margin-right: -3vw;
+		z-index: 5;
+		@include flexbox-justify(center);
+	}
+	.box {
+		width: 33%;
+		padding: 3vw;
+		@include xs {
+			width: 33.33%;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.illustrations {
+		width: 100%;
+		float: left;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		.col {
+			width: 100%;
+			@include tab {
+				width: 50%;
+			}
+			&.graphic {
+				width: 100%;
+				position: relative;
+				&:after {
+					content:"";
+					display: block;
+					width: 70px;
+					height: 70px;
+					position: absolute;
+			    top: 10px;
+		    	right: -10px;
+					background-image: url("images/squiggles/png/group_2.png");
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+				}
+				@include tab {
+					width: 40%;
+				}
+				img {
+					width: 100%;
+					height: auto;
+					position: relative;
+					left: 20%;
+					transform: translateY(-20%);
+					@include tab {
+						width: 250%;
+						left: 0;
+						transform: none;
+					}
+				}
+			}
+			&.text {
+				width: 100%;
+				position: relative;
+				z-index: 10;
+				@include flexgroup();
+				@include flexbox-align-items(center);
+				@include tab {
+					width: 60%;
+					padding-left: 5vw;
+				}
+				.wrap {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.more-btn.get-started {
+		&:hover {
+			color: #FFF;
+		}
+	}
+	.clients {	
+		.logos {
+			@include flexbox();
+			@include flexbox-align-items(center);
+			margin: 0 -10px;
+		}
+		span {
+			display: inline-block;
+			margin: 6px 0;
+			padding: 0 10px;
+		}
+		img.all {
+			width: 100%;
+			height: auto;
+		}
+		// span a,
+		// span img {
+		// 	display: block;
+		// 	width: auto;
+		// 	height: 35px;
+		// }
+	}
+}
 
-body.reached-bottom {
+.row-6 {
+	position: relative;
+	z-index: 15;
+	background: $color_pink2;
+	padding-top: 80px;
+	.skills {
+		width: 100%;
+		padding-bottom: 50px;
+		@include flexgroup();
+		@include flexbox-align-items(center);
+		@include tab {
+			width: 60%;
+		}
+		.t1, .wrap, div.more {
+			display: block;
+			width: 100%;
+		}
+		ul.services {
+			column-count:2;
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+			@include xs {
+				column-count: 3;
+			}
+		}
+	}
+	.graphic {
+		width: 100%;
+		@include tab {
+			width: 40%;
+		}
+		img, svg {
+			width: 100%;
+			float: left;
+		}
+	}
+	div.more {
+		a:hover {
+			color: $color_yellow1;
+		}
+	}
+}
+
+body.hide-row-1 {
 	.row-1 {
 		.titlediv h1 {
 			opacity: 0;
@@ -573,4 +935,67 @@ body.reached-bottom {
 		}
 	}
 }
+body.open-menu {
+	#page {
+		overflow: hidden;
+		@include tab {
+			overflow: auto;
+		}
+	}
+}
 
+/* FOOTER */
+.site-footer {
+	background-color: $color_pink1;
+	position: relative;
+	z-index: 20;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	&:before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 20px;
+		background-color: $color_pink1;
+		position: absolute;
+		top: -5px;
+		left: 0;;
+	}
+	.social-media {
+		margin: 0 0;
+		padding: 0 0;
+		text-align: center;
+		@include tab {
+			text-align: right;
+		}
+		a {
+			width: 40px;
+			height: 40px;
+			font-size: 20px;
+			line-height: 1;
+		}
+	}
+}
+.footer-line {
+	width: 100%;
+	height: 6px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	z-index: 50;
+	top: -3px;
+	&:before {
+		content: "";
+		display: block;
+		width: 200%;
+		height: 5px;
+		float: left;
+		position: absolute;
+		top: 0;
+		left: -30px;
+		background-image: url(images/footer_line.png);
+		background-position: top left;
+		background-repeat: repeat-x;
+		background-size: 75%;
+	}
+}
