@@ -1,38 +1,35 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package bellaworks
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div id="primary" class="content-area">
+	<?php while ( have_posts() ) : the_post(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<div class="sp-flexwrap">
 
-			<?php
-			while ( have_posts() ) : the_post();
+			<div class="col-left">
 
-				get_template_part( 'template-parts/content', 'page' );
+				<?php if( get_custom_logo() ) { ?>
+	        <div class="logo">
+	        	<?php the_custom_logo(); ?>
+	        </div>
+	      <?php } else { ?>
+	        <h1 class="logo">
+	          <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+	        </h1>
+	      <?php } ?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				<h1 class="page-title"><?php the_title(); ?></h1>
+			</div>
 
-			endwhile; // End of the loop.
-			?>
+			<div class="col-right">
+				<div class="inner">
+					<?php the_content(); ?>
+				</div>
+			</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
+	
+	<?php endwhile; ?>
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

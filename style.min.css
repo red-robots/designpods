@@ -1813,6 +1813,21 @@ body.hide-row-1 .row-1 .titlediv #row1-title{opacity:0;-webkit-transform:transla
 body.open-menu #page{overflow:hidden}
 @media(min-width:600px){body.open-menu #page{overflow:auto}
 }body.scrolled #row1-title{-webkit-transform:translateY(5%);-ms-transform:translateY(5%);transform:translateY(5%)}
+body.subpage #primary{height:100%}
+body.subpage h1.page-title{font-family:moret,serif;font-size:4rem;line-height:1.2;margin:0}
+@media(min-width:900px){body.subpage h1.page-title{font-size:7rem}
+}body.subpage .logo{text-align:center}
+body.subpage .logo a{display:inline-block;width:70px}
+body.subpage .logo a img{width:100%;height:auto}
+@media(min-width:900px){body.subpage #siteMenu{width:200px;height:200px}
+}.sp-flexwrap{height:100%;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.sp-flexwrap .col-left{width:100%;height:100vh;background:#fceaea;padding:13vh 30px 30px;text-align:center}
+@media(min-width:900px){.sp-flexwrap .col-left{width:50%}
+}.sp-flexwrap .col-right{width:100%;height:100vh}
+@media(min-width:900px){.sp-flexwrap .col-right{width:50%}
+}.sp-flexwrap .col-right .inner{padding:15vh 20px 20px}
+@media(min-width:900px){.sp-flexwrap .col-right .inner{padding:20vh 5vw 30px}
+}.sp-flexwrap .col-right h1{font-size:3.5rem;font-weight:400;line-height:1.1}
 .site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:30px;padding-bottom:30px}
 .site-footer:before{content:"";display:block;width:100%;height:20px;background-color:#fceaea;position:absolute;top:-5px;left:0}
 .site-footer .social-media{margin:0;padding:0;text-align:center}
