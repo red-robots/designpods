@@ -7,7 +7,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Passion+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/jhr4bgw.css">
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.min.js"></script>
 <?php wp_head(); ?>
 </head>

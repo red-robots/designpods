@@ -396,3 +396,38 @@ function get_instagram_setup() {
 function imageDIR($fileName) {
     echo get_bloginfo("template_url") . "/images/" . $fileName;
 }
+
+
+
+// Enable font size and font family selects in the editor
+if ( ! function_exists( 'am_add_mce_font_buttons' ) ) {
+    function am_add_mce_font_buttons( $buttons ) {
+        array_unshift( $buttons, 'fontselect' ); // Add Font Select
+        return $buttons;
+    }
+}
+add_filter( 'mce_buttons_2', 'am_add_mce_font_buttons' ); // you can use mce_buttons_2 or mce_buttons_3 to change the rows where the buttons will appear
+
+
+// Add custom Fonts to the Fonts list
+if ( ! function_exists( 'custom_fonts_array_to_tiny_mce' ) ) {
+    function custom_fonts_array_to_tiny_mce( $initArray ) {
+        $content_css = 'https://use.typekit.net/jhr4bgw.css';
+        if ( isset( $initArray[ 'content_css' ] ) ) {
+            $content_css_new =  $initArray[ 'content_css' ].','.$content_css;
+        }
+        $initArray[ 'content_css' ] = $content_css_new;
+        $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;Georgia=georgia,palatino;Proxima=proxima-soft-condensed;Moret=moret, serif';
+            return $initArray;
+    }
+}
+add_filter( 'tiny_mce_before_init', 'custom_fonts_array_to_tiny_mce' );
+
+
+add_action('admin_head', 'content_textarea_height');
+function content_textarea_height() { ?>
+    <style type="text/css">
+        .mce-edit-area #acf-editor-55_ifr{ height:100px !important;min-height: 100px!important; }
+    </style>
+<?php
+}

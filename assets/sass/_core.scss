@@ -449,7 +449,7 @@ body.content-loaded {
 			position: relative;
 		}
 	}
-	h1 {
+	#row1-title {
 		display: block;
 		font-family: $font_secondary;
 		font-size: 13vw;
@@ -776,8 +776,11 @@ div.more {
 				@include tab {
 					top: 0;
 				}
+				img,
 				svg {
 					width: 100%;
+					float: left;
+					height: auto;
 				}
 			}
 			&.text {
@@ -928,15 +931,18 @@ div.more {
 			display: block;
 			width: 100%;
 		}
-		ul.services {
-			column-count:2;
-			margin: 0 0;
-			padding: 0 0;
-			list-style: none;
-			@include xs {
-				column-count: 3;
+		.services-list {
+			ul {
+				column-count:2;
+				margin: 0 0;
+				padding: 0 0;
+				list-style: none;
+				@include xs {
+					column-count: 3;
+				}
 			}
 		}
+		
 	}
 	.graphic {
 		width: 100%;
@@ -957,7 +963,7 @@ div.more {
 
 body.hide-row-1 {
 	.row-1 {
-		.titlediv h1 {
+		.titlediv #row1-title {
 			opacity: 0;
 			transform: translateY(-10vh);
 		}

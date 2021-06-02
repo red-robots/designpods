@@ -10,6 +10,7 @@ function js_custom_init() {
             'menu_name' => 'Projects',
             'plural'    => 'Projects',
             'single'    => 'Project',
+            'menu_icon' => 'dashicons-index-card',
             'supports'  => array('title','editor')
         )
     );
@@ -130,9 +131,9 @@ function set_custom_cpt_columns($columns) {
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
     
-    if($post_type=='team') {
+    if($post_type=='projects') {
         unset( $columns['date'] );
-        $columns['photo'] = __( 'Photo', 'bellaworks' );
+        $columns['thumbnail'] = __( 'Thumbnail', 'bellaworks' );
         $columns['date'] = __( 'Date', 'bellaworks' );
     }
     
@@ -146,10 +147,10 @@ function custom_post_column( $column, $post_id ) {
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-    if($post_type=='team') {
+    if($post_type=='projects') {
         switch ( $column ) {
-            case 'photo' :
-                $img = get_field('team_individual_image',$post_id);
+            case 'thumbnail' :
+                $img = get_field('thumbnail_image',$post_id);
                 $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
                 $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
                 if($img_src) {

@@ -1,14 +1,17 @@
 <?php get_header(); ?>
 
+
+<?php while ( have_posts() ) : the_post(); ?>
+
+<?php $row1Text = get_field("row1_text"); ?>
 <div class="row-1 w100">
 	<div class="text">
 		<div class="wrapper">
 			<div class="titlediv fixed">
 				<div class="inline fadeIn animated">
-					<h1 id="row1-title">
-						Look good<BR>
-						and be nice
-					</h1>
+					<?php if ($row1Text) { ?>
+					<div id="row1-title"><?php echo $row1Text ?></div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -18,6 +21,17 @@
 	</div>
 </div>
 
+
+<?php 
+	$row2_title = get_field("row2_title"); 
+	$row2_text = get_field("row2_text"); 
+	$row2_button = get_field("row2_button");
+	$btn2Link =  (isset($row2_button['url']) && $row2_button['url']) ? $row2_button['url'] : ''; 
+	$btn2Name =  (isset($row2_button['title']) && $row2_button['title']) ? $row2_button['title'] : ''; 
+	$btn2Target =  (isset($row2_button['target']) && $row2_button['target']) ? $row2_button['target'] : '_self'; 
+?>
+
+<?php if ($row2_title || $row2_text) { ?>
 <div class="row-2 w100 para" data-pos-x="left" data-parallax="1" data-src="<?php imageDIR('yellow.png') ?>">
 	<div class="row-inner">
 		<div class="balloon-hero"></div>
@@ -26,13 +40,21 @@
 				
 				<div class="col left">
 					<div class="wrap wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
-						<h2 class="h2">Designpods is<BR>Lindsay Podrid.</h2>
-						<div class="info">
-							I'm a freelance graphic designer and doughnut eater doing good work with nice people. I like the color yellow, large balloons, and nicely kerned type. I'm currently working on a website redesign for a Fortune 50 company and a logo for my fictitious band, Girl Squirrel. Life and work are all about balance.
-						</div>
+						
+						<?php if ($row2_title) { ?>
+							<h2 class="h2"><?php echo $row2_title ?></h2>
+						<?php } ?>
+						
+						<?php if ($row2_text) { ?>
+						<div class="info"><?php echo $row2_text ?></div>
+						<?php } ?>
+
+						<?php if ($btn2Link && $btn2Name) { ?>
 						<div class="more">
-							<a href="#" class="more-btn">Read More</a>
+							<a href="<?php echo $btn2Link ?>" target="<?php echo $btn2Target ?>" class="more-btn"><?php echo $btn2Name ?></a>
 						</div>
+						<?php } ?>
+						
 					</div>
 				</div>
 
@@ -48,122 +70,225 @@
 		</div>
 	</div>
 </div>
+<?php } ?>
 
 
+<?php 
+$row3_image = get_field("row3_image");
+$row3_text = get_field("row3_text");
+if($row3_image || $row3_text) { ?>
 <div class="row-3 w100">
 	<div class="wrapper sm">
 		<div class="flexwrap">
+			<?php if ($row3_image) { ?>
 			<div class="col left fadeIn wow" data-wow-duration="0.5s">
 				<div class="inner doughnut-graphic">
 					<span class="art1">
 						<?php include( locate_template('images/animated/stars.svg') ) ?>
 					</span>
-					<img class="doughnut" src="<?php imageDIR('animated/doughnut.gif') ?>" alt="doughnut" />
+					<img class="doughnut" src="<?php echo $row3_image['url'] ?>" alt="<?php echo $row3_image['title'] ?>" />
 				</div>
 			</div>
+			<?php } ?>
 
+			<?php if ($row3_text) { ?>
 			<div class="col right">
 				<div class="text font2 fadeIn wow">
-					<h2>You're here so you might as well look at some work.</h2>
+					<h2><?php echo $row3_text ?></h2>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
-			
 	</div>
 </div>
+<?php } ?>
 
 
+
+
+<?php  
+/* PROJECTS / CASE STUDIES */
+$featured_projects = get_field("featured_projects");
+?>
 <div class="row-4 w100 row-projects">
 	<div class="wrapper sm">
+
+		<?php if ($featured_projects) { ?>
 		<div class="flexwrap projects">
-			<div class="box wow fadeInUp" data-wow-delay="0.1s">
-				<a href="#"><img src="<?php imageDIR('thumbnails/color_study_thumb.jpg') ?>" alt=""></a>
-			</div>
-			<div class="box wow fadeInUp" data-wow-delay="0.2s">
-				<a href="#"><img src="<?php imageDIR('thumbnails/vf_thumb.jpg') ?>" alt=""></a>
-			</div>
-			<div class="box wow fadeInUp" data-wow-delay="0.3s">
-				<a href="#"><img src="<?php imageDIR('thumbnails/eco_options_thumb.jpg') ?>" alt=""></a>
-			</div>
+			<?php 
+			$second = round(10/100,2);
+			$i=$second; foreach ($featured_projects as $p) { 
+				$i = $second + $i;
+				$pid = $p->ID;
+				$pagelink = get_permalink($pid);
+				$thumb = get_field("thumbnail_image",$pid);
+				if($thumb) { ?>
+				<div class="box wow fadeInUp" data-wow-delay="<?php echo $i ?>s">
+					<a href="<?php echo $pagelink; ?>"><img src="<?php echo $thumb['url'] ?>" alt="<?php echo $thumb['title'] ?>"></a>
+				</div>
+				<?php } ?>
+			<?php } ?>
 		</div>
+		<?php } ?>
+
+
+		<?php 
+		$row4ImageType = get_field("row4_image_type");
+		$row4Type = ($row4ImageType) ? $row4ImageType : '';
+		$row4_image = ($row4Type) ? get_field("row4_".$row4Type) : ""; 
+		$row4_group = get_field("row4_group"); 
+		?>
 		<div class="illustration-logo">
 			<span class="top-star"></span>
 			<div class="flexwrap">
-				<div class="col graphic wow fadeIn" data-wow-delay="0.3s">
-					<?php include( locate_template('images/svg/logo_bigger.svg') );  ?>
+				<?php if ($row4Type=='svg') { ?>
+				<div class="col graphic wow fadeIn" data-wow-delay="0.5s">
+					<div class="img-svg"><?php echo $row4_image ?></div>
 				</div>
-				<div class="col text wow fadeIn" data-wow-delay="0.4s">
-					<h2 class="h2 font2">Let me make your logo bigger.</h2>
-					<p>One of the oldest designers jokes is the client asking to make their logo bigger. The client asks, the designer sighs, the logo eventually ends up bigger. Let's make a logo, and let's make it bigger.</p>
-					<div class="more">
-						<a href="#" class="more-btn get-started">Get Started <span class="icon"><i class="fab fa-telegram-plane"></i></span></a>
+				<?php } else if($row4Type=='image') { ?>
+				<div class="col graphic wow fadeIn" data-wow-delay="0.5s">
+					<img src="<?php echo $row4_image['url'] ?>" alt="<?php echo $row4_image['title'] ?>" class="img-type">
+				</div>
+				<?php } ?>
+
+				<?php if ($row4_group) { ?>
+				<div class="col text wow fadeIn" data-wow-delay="0.7s">
+
+					<?php if ( isset($row4_group['title']) && $row4_group['title'] ) { ?>
+						<h2 class="h2 font2"><?php echo $row4_group['title'] ?></h2>
+					<?php } ?>
+
+					<?php if ( isset($row4_group['text']) && $row4_group['text'] ) { ?>
+					<div class="svg-text">
+						<?php echo $row4_group['text']; ?>
 					</div>
+					<?php } ?>
+
+
+					<?php if ( isset($row4_group['button']) && $row4_group['button'] ) { 
+						$r4Btn = $row4_group['button'];
+						$r4BtnLink = ( isset($r4Btn['url']) && $r4Btn['url'] ) ? $r4Btn['url'] : '';
+						$r4BtnName = ( isset($r4Btn['title']) && $r4Btn['title'] ) ? $r4Btn['title'] : '';
+						$r4BtnTarget = ( isset($r4Btn['target']) && $r4Btn['target'] ) ? $r4Btn['target'] : '_self';
+						?>
+						<div class="more">
+							<a href="<?php echo $r4BtnLink ?>" target="<?php echo $r4BtnTarget ?>" class="more-btn get-started"><?php echo $r4BtnName ?> <span class="icon"><i class="fab fa-telegram-plane"></i></span></a>
+						</div>
+					<?php } ?>
+
 				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
 </div>
 
+<?php  
+
+$row5ImageType = get_field("row5_image_type");
+$row5Type = ($row5ImageType) ? $row5ImageType : '';
+$row5_image = ($row5Type) ? get_field("row5_".$row5Type) : ""; 
+$row5Clients = get_field("row5_clients");
+$row5Title = ( isset($row5Clients['heading']) && $row5Clients['heading'] ) ? $row5Clients['heading'] : '';
+$row5Brands = ( isset($row5Clients['brands']) && $row5Clients['brands'] ) ? $row5Clients['brands'] : '';
+?>
 
 <div class="row-5 w100 row-brands">
 	<div class="wrapper sm">
 		<div class="illustrations">
 			<div class="flexwrap">
-				<div class="col graphic wow fadeIn" data-wow-delay="0.3s">
-					<span class="star"><?php include( locate_template('images/animated/traingle_x.svg') );  ?></span>
-					<img src="<?php imageDIR('animated/pop_desktop.gif') ?>" alt="">
+
+				<?php if ($row5Type=='svg') { ?>
+				<div class="col graphic wow fadeIn" data-wow-delay="0.4s">
+					<div class="img-svg"><?php echo $row5_image ?></div>
 				</div>
+				<?php } else if($row5Type=='image') { ?>
+				<div class="col graphic wow fadeIn" data-wow-delay="0.4s">
+					<img src="<?php echo $row5_image['url'] ?>" alt="<?php echo $row5_image['title'] ?>" class="img-type">
+				</div>
+				<?php } ?>
+
+				<?php if ( $row5Title || $row5Brands ) { ?>
 				<div class="col text wow fadeIn" data-wow-delay="0.4s">
 					<div class="wrap">
-						<h2 class="h2 font2">A few brands I've had the joy to work with.</h2>
+
+						<?php if ($row5Title) { ?>
+							<h2 class="h2 font2"><?php echo $row5Title ?></h2>
+						<?php } ?>
+						
+						<?php if ($row5Brands) { ?>
 						<div class="clients">
 							<div class="logos">
-								<img class="all" src="<?php imageDIR('clients/all_logos.png') ?>" alt="">
+								<img class="all" src="<?php echo $row5Brands['url'] ?>" alt="<?php echo $row5Brands['title'] ?>">
 							</div>
 						</div>
+						<?php } ?>
+
 					</div>
 				</div>
+				<?php } ?>
+
 			</div>
 		</div>
 	</div>
 </div>
 
+<?php  
+$row6_title = get_field("row6_title");
+$row6_text = get_field("row6_text");
+$row6_button = get_field("row6_button");
+$btn6Link =  (isset($row6_button['url']) && $row6_button['url']) ? $row6_button['url'] : ''; 
+$btn6Name =  (isset($row6_button['title']) && $row6_button['title']) ? $row6_button['title'] : ''; 
+$btn6Target =  (isset($row6_button['target']) && $row6_button['target']) ? $row6_button['target'] : '_self'; 
 
+$row6ImageType = get_field("row6_image_type");
+$row6Type = ($row6ImageType) ? $row6ImageType : '';
+$row6_image = ($row6Type) ? get_field("row6_".$row6Type) : ""; 
+
+if( $row6_title || $row6_text ) { ?>
 <div class="row-6 w100 abracadabra">
 	<div class="wrapper sm">
 		<div class="flexwrap">
 			<div class="skills">
 				<div class="wrap wow fadeIn">
-					<h2 class="t1 h2 font2">
-						Abracadabra!<BR>
-						I'm a full-service Lindsay.
-					</h2>
-					<ul class="services">
-						<li>Strategy</li>
-						<li>User Experience</li>
-						<li>Digital Design</li>
-						<li>Art Direction</li>
-						<li>Doughnut Eating</li>
-						<li>Identity and Brand</li>
-						<li>Packaging</li>
-						<li>Presentation Design</li>
-					</ul>
-
-					<div class="more">
-						<a href="#" class="more-btn">Read More</a>
+					<?php if ($row6_title) { ?>
+					<h2 class="t1 h2 font2"><?php echo $row6_title ?></h2>
+					<?php } ?>
+						
+					<?php if ($row6_text) { ?>
+					<div class="services-list">
+						<?php echo $row6_text ?>
 					</div>
+					<?php } ?>
+
+					<?php if( $btn6Link || $btn6Name ) { ?>
+					<div class="more">
+						<a href="<?php echo $btn6Link ?>" target="<?php echo $btn6Target ?>" class="more-btn"><?php echo $btn6Name ?></a>
+					</div>
+					<?php } ?>
 				</div>
 				
 			</div>
 
+			<?php if ( $row6_image && $row6Type ) { ?>
 			<div class="graphic">
+				<?php if ($row6Type=='svg') { ?>
 				<div class="graphic-svg wow fadeInUp" data-wow-delay="0.5s">
-					<?php include( locate_template('images/svg/rabbit_hat.svg') );  ?>
+					<div class="img-svg"><?php echo $row6_image ?></div>
 				</div>
+				<?php } else if($row6Type=='image') { ?>
+				<div class="graphic-svg wow fadeInUp" data-wow-delay="0.5s">
+					<img src="<?php echo $row6_image['url'] ?>" alt="<?php echo $row6_image['title'] ?>" class="img-type">
+				</div>
+				<?php } ?>
 			</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>
+<?php } ?>
+
+<?php endwhile; ?>
 
 <?php
 get_footer();
