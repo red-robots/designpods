@@ -3,7 +3,9 @@
 <div id="primary" class="content-area">
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<div class="sp-flexwrap">
+		<?php $bottomImage = get_field("bottom_image"); ?>
+
+		<div id="page-content" class="sp-flexwrap">
 
 			<div class="col-left">
 
@@ -18,18 +20,87 @@
 	      <?php } ?>
 
 				<h1 class="page-title"><?php the_title(); ?></h1>
+
+				<?php if ($bottomImage) { ?>
+				<div class="page-bottom-image hide-xs">
+					<img id="bottom-image" src="<?php echo $bottomImage['url'] ?>" alt="<?php echo $bottomImage['title'] ?>">
+				</div>	
+				<?php } ?>
 			</div>
 
-			<div class="col-right">
-				<div class="inner">
+			<?php $alt_title = get_field("alternative_title"); ?>
+			<div class="col-right pagetext">
+				<div class="page-inner hidden">
+					<?php if ($alt_title) { ?>
+					<div class="titlediv">
+						
+						<h2 class="alt-title">
+							<span class="svg-top">
+								<?php include( locate_template('images/squiggles/svg/animated/traingle_x.svg') ); ?>
+							</span>
+							<?php echo $alt_title ?>
+							<span class="svg-bottom">
+								<?php include( locate_template('images/squiggles/svg/animated/sprinkle.svg') ); ?>
+							</span>
+						</h2>
+					</div>
+					<?php } ?>
 					<?php the_content(); ?>
 				</div>
 			</div>
-
 		</div>
+
+
+		<div class="page-content-mirror">
+			<div class="page-text-wrap">
+				<div class="page-inner">
+					<?php if ($alt_title) { ?>
+						<div class="titlediv">
+							
+							<h2 class="alt-title">
+								<span class="svg-top">
+									<?php include( locate_template('images/squiggles/svg/animated/traingle_x.svg') ); ?>
+								</span>
+								<?php echo $alt_title ?>
+								<span class="svg-bottom">
+									<?php include( locate_template('images/squiggles/svg/animated/sprinkle.svg') ); ?>
+								</span>
+							</h2>
+						</div>
+						<?php } ?>
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</div>
+
+
+		<?php if ($bottomImage) { ?>
+		<div class="page-bottom-image visible-xs">
+			<div class="image" style="background-image:url('<?php echo $bottomImage['url'] ?>')"></div>
+			<img id="bottom-image" src="<?php echo $bottomImage['url'] ?>" alt="<?php echo $bottomImage['title'] ?>">
+		</div>	
+		<?php } ?>
+
+		
 	
 	<?php endwhile; ?>
 </div><!-- #primary -->
 
+<script>
+jQuery(document).ready(function($){
+	
+	adjust_image_bottom();
+	$(window).resize(function(){
+		adjust_image_bottom();
+	});
+
+	function adjust_image_bottom() {
+		if( $("#bottom-image").length > 0 ) {
+			var imageHeight = Math.round($("#bottom-image").height() / 2) + 30;
+			$(".pagetext").css("padding-bottom",imageHeight+"px");
+		}
+	}
+});
+</script>
 <?php
 get_footer();

@@ -431,3 +431,37 @@ function content_textarea_height() { ?>
     </style>
 <?php
 }
+
+function get_social_media() {
+    $icons = array(
+        'facebook'  => 'fab fa-facebook-square',
+        'instagram' => 'fab fa-instagram',
+        'twitter'   => 'fab fa-twitter-square',
+        'linkedin'  => 'fab fa-linkedin-in',
+        'youtube'   => 'fab fa-youtube',
+        'vimeo'     => 'fab fa-vimeo',
+    );
+    $options = get_field("social_media_links","option");
+    $socialMedia = array();
+    if($options) {
+        foreach($options as $o) {
+            $link = $o['link'];
+            if($link && preg_replace("/\s+/","",$link) ) {
+                $str = preg_replace("/\s+/", "", $link);
+                if (filter_var($str, FILTER_VALIDATE_EMAIL)) {
+                    $socialMedia['email'] = array('url'=>$str,'type'=>'email','icon'=>'fab fa-telegram-plane');
+                } else {
+                    $parts = explode(".",$link);
+                    foreach($parts as $p) {
+                        if( array_key_exists($p,$icons) ) {
+                            $s_icon = $icons[$p];
+                            $socialMedia[$p] = array('url'=>$link,'type'=>$p,'icon'=>$s_icon);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return $socialMedia;
+}
+

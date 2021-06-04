@@ -22,20 +22,16 @@
 		<a href="#" id="closeNav" class="closeNav"><span class="sr">Close Menu</span></a>
 		<div class="wrapper">
 			<nav class="menu-wrapper">
-			<?php 
-	      wp_nav_menu( 
-	        array( 
-	          'theme_location' => 'primary', 
-	          'menu_id' => 'primary-menu',
-	          'container'=> false
-	        )
-	      ); 
-	    ?>
-	    	<div class="social-media">
-	    		<a href="#" class="instagram" aria-hidden="true"><i class="fab fa-instagram"></i></a>
-	    		<a href="#" class="linkedin" aria-hidden="true"><i class="fab fa-linkedin-in"></i></a>
-	    		<a href="#" class="mail" aria-hidden="true"><i class="fab fa-telegram-plane"></i></a>
-	    	</div>
+				<?php 
+		      wp_nav_menu( 
+		        array( 
+		          'theme_location' => 'primary', 
+		          'menu_id' => 'primary-menu',
+		          'container'=> false
+		        )
+		      ); 
+		    ?>
+	    	<?php get_template_part("parts/social-media"); ?>
     	</nav>	
     </div>
 	</div>

@@ -1668,9 +1668,9 @@ a,textarea,input,button,select{-webkit-transition:all ease .3s;transition:all ea
 .font2{font-family:moret,serif !important}
 .wrapper{margin:0 auto;max-width:1100px;width:100%;padding-left:20px;padding-right:20px}
 .wrapper.sm{max-width:1100px}
-#siteMenu{display:block;width:110px;height:110px;position:fixed;top:35px;right:65px;z-index:200;opacity:0;-webkit-transform:translateY(100vh);-ms-transform:translateY(100vh);transform:translateY(100vh);-webkit-transition:all ease 1s;transition:all ease 1s}
+#siteMenu{display:block;width:100px;height:100px;position:fixed;top:70px;right:10px;z-index:200;opacity:0;-webkit-transform:translateY(100vh);-ms-transform:translateY(100vh);transform:translateY(100vh);-webkit-transition:all ease 1s;transition:all ease 1s}
 @media(min-width:468px){#siteMenu{top:5vh;right:5vw}
-}@media(min-width:600px){#siteMenu{width:180px;height:180px}
+}@media(min-width:600px){#siteMenu{top:70px;right:20px;width:120px;height:120px}
 }@media(min-width:900px){#siteMenu{width:220px;height:220px}
 }@media(min-width:1200px){#siteMenu{width:300px;height:300px}
 }#siteMenu.open{opacity:0;-webkit-transform:scale(0.2) !important;-ms-transform:scale(0.2) !important;transform:scale(0.2) !important;margin-top:-13vh;margin-right:-22vh;opacity:0 !important}
@@ -1813,25 +1813,53 @@ body.hide-row-1 .row-1 .titlediv #row1-title{opacity:0;-webkit-transform:transla
 body.open-menu #page{overflow:hidden}
 @media(min-width:600px){body.open-menu #page{overflow:auto}
 }body.scrolled #row1-title{-webkit-transform:translateY(5%);-ms-transform:translateY(5%);transform:translateY(5%)}
-body.subpage #primary{height:100%}
+body.subpage .site,body.subpage #primary{height:auto}
 body.subpage h1.page-title{font-family:moret,serif;font-size:4rem;line-height:1.2;margin:0}
 @media(min-width:900px){body.subpage h1.page-title{font-size:7rem}
 }body.subpage .logo{text-align:center}
 body.subpage .logo a{display:inline-block;width:70px}
 body.subpage .logo a img{width:100%;height:auto}
-@media(min-width:900px){body.subpage #siteMenu{width:200px;height:200px}
-}.sp-flexwrap{height:100%;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.sp-flexwrap .col-left{width:100%;height:100vh;background:#fceaea;padding:13vh 30px 30px;text-align:center}
+@media(min-width:900px){body.subpage #siteMenu{width:180px;height:180px}
+}body.subpage .site-footer .wrapper{max-width:80%}
+.sp-flexwrap{height:100%;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.sp-flexwrap .col-left{width:100%;background:#fceaea;padding:13vh 30px 30px;text-align:center;position:relative}
 @media(min-width:900px){.sp-flexwrap .col-left{width:50%}
-}.sp-flexwrap .col-right{width:100%;height:100vh}
+}.sp-flexwrap .col-right{width:100%}
 @media(min-width:900px){.sp-flexwrap .col-right{width:50%}
-}.sp-flexwrap .col-right .inner{padding:15vh 20px 20px}
-@media(min-width:900px){.sp-flexwrap .col-right .inner{padding:20vh 5vw 30px}
-}.sp-flexwrap .col-right h1{font-size:3.5rem;font-weight:400;line-height:1.1}
-.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:30px;padding-bottom:30px}
+}#page-content{position:relative}
+.page-bottom-image{width:100vw;position:relative;left:0;bottom:-30px;overflow:hidden}
+.page-bottom-image img{width:100%;height:auto}
+.page-bottom-image.hide-xs{display:none}
+.page-bottom-image.visible-xs{display:block;background-image:none}
+.page-bottom-image div.image{display:none}
+@media(min-width:900px){.page-bottom-image{position:absolute;bottom:0}
+.page-bottom-image.hide-xs{display:block}
+.page-bottom-image.visible-xs{display:none}
+}@media screen and (max-width:600px){.page-bottom-image div.image{display:block;height:380px;background-size:cover;background-position:bottom center}
+.page-bottom-image img{display:none}
+}.page-inner{padding:10vh 20vw 30px 7vw}
+.page-inner.hidden{display:none;visibility:hidden}
+@media(min-width:900px){.page-inner.hidden{display:block}
+}@media(min-width:600px){.page-inner{padding:8vh 20vw 30px 10vw}
+}@media(min-width:900px){.page-inner{padding:20vh 12vw 30px 6vw}
+}@media screen and (max-width:600px){.page-inner{padding-bottom:0}
+}.page-inner .titlediv{position:relative}
+.page-inner .titlediv .svg-top{display:inline-block;position:absolute;top:-55px;left:-10px;width:60px}
+@media(min-width:600px){.page-inner .titlediv .svg-top{top:-35px;left:-40px}
+}.page-inner .titlediv .svg-top svg{width:100%}
+.page-inner .titlediv .svg-bottom{display:inline-block;position:absolute;bottom:-40px;width:45px;margin-left:15px}
+.page-inner .titlediv .svg-bottom svg{width:100%}
+.page-inner .alt-title{font-family:moret,serif;font-size:2.5rem;font-weight:400;line-height:1.1;display:inline-block;position:relative;margin:0 0 20px}
+@media(min-width:600px){.page-inner .alt-title{font-size:3.5rem}
+}.content-area{position:relative}
+.content-area .page-content-mirror{width:100%;position:relative;z-index:20}
+@media(min-width:900px){.content-area .page-content-mirror{width:50%;position:absolute;top:0;right:0}
+}.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:30px;padding-bottom:30px}
 .site-footer:before{content:"";display:block;width:100%;height:20px;background-color:#fceaea;position:absolute;top:-5px;left:0}
 .site-footer .social-media{margin:0;padding:0;text-align:center}
 @media(min-width:600px){.site-footer .social-media{text-align:right}
 }.site-footer .social-media a{width:40px;height:40px;font-size:20px;line-height:1}
 .footer-line{width:100%;height:6px;float:left;overflow:hidden;position:relative;z-index:50;top:-3px}
 .footer-line:before{content:"";display:block;width:200%;height:5px;float:left;position:absolute;top:0;left:-30px;background-image:url(images/footer_line.png);background-position:top left;background-repeat:repeat-x;background-size:75%}
+@media screen and (max-width:600px){#wpadminbar{position:fixed}
+}
