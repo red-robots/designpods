@@ -74,6 +74,10 @@ jQuery(document).ready(function ($) {
 	  }
   }
 
+ //  var msnry = new Masonry( '.masonry', {
+	//   fitWidth: true,
+	// });
+
 
 });// END #####################################    END
 

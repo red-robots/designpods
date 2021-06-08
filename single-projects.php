@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area post-projects">
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<?php $bottomImage = get_field("bottom_image"); ?>
@@ -11,7 +11,7 @@
 
 				<?php get_template_part("parts/subpage-logo"); ?>
 
-				<h1 class="page-title"><?php the_title(); ?></h1>
+				<h1 class="page-title">Work</h1>
 
 				<?php if ($bottomImage) { ?>
 				<div class="page-bottom-image hide-xs">
@@ -21,55 +21,49 @@
 			</div>
 
 			<?php 
-			$alt_title = get_field("alternative_title"); 
-			$main_content = "";
+			$alt_title = (get_field("title1")) ? get_field("title1") : get_the_title(); 
+			$small_title = get_field("title2");
+			$main_content = get_field("text");
 			?>
 			<div class="col-right pagetext">
-				<div class="page-inner hidden">
+				<div class="page-inner">
 
-					<?php ob_start(); ?>
-					<?php if ($alt_title) { ?>
+					<?php if ($alt_title || $small_title) { ?>
 					<div class="titlediv">
 						<h2 class="alt-title">
 							<span class="svg-top">
-								<?php include( locate_template('images/squiggles/svg/animated/traingle_x.svg') ); ?>
+								<?php include( locate_template('images/squiggles/svg/animated/group_2.svg') ); ?>
 							</span>
 							<?php echo $alt_title ?>
-							<span class="svg-bottom">
-								<?php include( locate_template('images/squiggles/svg/animated/sprinkle.svg') ); ?>
-							</span>
 						</h2>
+						<?php if ($small_title) { ?>
+							<h3 class="h3"><?php echo $small_title ?></h3>
+						<?php } ?>
 					</div>
 					<?php } ?>
-					<?php the_content(); ?>
 
-					<?php 
-						$main_content = ob_get_contents(); 
-						ob_end_clean();
-						echo $main_content;
+					<div class="entry-content">
+						<?php echo $main_content; ?>
+					</div>
+
+				</div>
+			</div>
+
+			<?php $images = get_field("fullwidth_images"); ?>
+			<?php if ($images) { ?>
+			<div class="fullwidth-images">
+				<div class="wrapper">
+				<?php foreach ($images as $row) { 
+					$img = $row['image'];
 					?>
-
+					<figure class="fullwidth">
+						<img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" class="full-image">
+					</figure>
+				<?php } ?>
 				</div>
-			</div>
+			</div>	
+			<?php } ?>
 		</div>
-
-
-		<div class="page-content-mirror">
-			<div class="page-text-wrap">
-				<div class="page-inner">
-					<?php echo $main_content ?>
-				</div>
-			</div>
-		</div>
-
-
-		<?php if ($bottomImage) { ?>
-		<div class="page-bottom-image visible-xs">
-			<div class="image" style="background-image:url('<?php echo $bottomImage['url'] ?>')"></div>
-			<img id="bottom-image" src="<?php echo $bottomImage['url'] ?>" alt="<?php echo $bottomImage['title'] ?>">
-		</div>	
-		<?php } ?>
-
 		
 	
 	<?php endwhile; ?>

@@ -14,13 +14,14 @@ $font_primary: 'proxima-soft-condensed','PT Sans Narrow', sans-serif;
 $font_secondary: moret, serif;
 $font_code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font_pre: "Courier 10 Pitch", Courier, monospace;
-
+$font_serif: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 $portrait: 320px;
-$xswidth: 468px;
-$tabwidth: 600px;
-$midwidth: 900px;
+$xswidth: 600px;
+$tabwidth: 860px;
+$midwidth: 960px;
 $deskwidth: 1200px;
 $xxl: 1400px;
+$wrapper: 1300px;
 
 @mixin xxs { @media (min-width: $portrait) { @content; } }
 @mixin xs { @media (min-width: $xswidth) { @content; } }
