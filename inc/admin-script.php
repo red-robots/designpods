@@ -19,5 +19,9 @@ function my_custom_admin_css() { ?>
     .acf-field-gallery[data-name="projects"] tr[data-name="pagelink"]{
         display: table-row;
     }
+    [data-name="squiggles"] .acf-image-uploader .image-wrap img[src$=".svg"] {
+        min-height: 50px!important;
+        min-width: 50px!important;
+    }
 </style>
 <?php }

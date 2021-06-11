@@ -51,7 +51,12 @@
 
 			<?php $images = get_field("fullwidth_images"); ?>
 			<?php if ($images) { ?>
-			<div class="fullwidth-images">
+			<div id="fullwidth-images" class="fullwidth-images">
+				<div id="subnav">
+					<div class="wrapper">
+						<a href="<?php echo get_site_url() ?>/work/">&larr; Back to all projects</a>
+					</div>
+				</div>
 				<div class="wrapper">
 				<?php foreach ($images as $row) { 
 					$img = $row['image'];
@@ -69,20 +74,39 @@
 	<?php endwhile; ?>
 </div><!-- #primary -->
 
+
 <script>
 jQuery(document).ready(function($){
-	
-	adjust_image_bottom();
-	$(window).resize(function(){
-		adjust_image_bottom();
+
+
+	$(window).scroll(function(){
+	  var inView = elementInViewport( document.getElementById('fullwidth-images') );
+	  if(inView) {
+	  	$("#fullwidth-images").addClass('show-nav');
+	  } else {
+	  	$("#fullwidth-images").removeClass('show-nav');
+	  }
 	});
 
-	function adjust_image_bottom() {
-		if( $("#bottom-image").length > 0 ) {
-			var imageHeight = Math.round($("#bottom-image").height() / 2) + 30;
-			$(".pagetext").css("padding-bottom",imageHeight+"px");
-		}
+	
+
+	function elementInViewport(el) {
+	  var r, html;
+    if ( !el || 1 !== el.nodeType ) { return false; }
+    html = document.documentElement;
+    r = el.getBoundingClientRect();
+
+    return ( !!r
+      && r.bottom >= 0
+      && r.right >= 0
+      && r.top <= html.clientHeight
+      && r.left <= html.clientWidth
+    );
+
 	}
+
+
+
 });
 </script>
 <?php

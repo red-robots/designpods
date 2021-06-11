@@ -1030,7 +1030,7 @@ body.subpage {
 	.col-left {
 		width: 100%;
 		// height: 100vh;
-		background: $color_pink1;
+		// background: $color_pink1;
 		padding: 13vh 30px 30px;
 		text-align: center;
 		position: relative;
@@ -1040,6 +1040,7 @@ body.subpage {
 	}
 	.col-right {
 		width: 100%;
+		background: #FFF;
 		@include mid {
 			width: 50%;
 		}
@@ -1065,6 +1066,10 @@ body.subpage {
 	&.visible-xs {
 		display: block;
 		background-image: none;
+		bottom: 0;
+		&.white {
+			background-color: #FFF;
+		}
 	}
 	div.image {display: none;}
 	@include mid {
@@ -1089,9 +1094,46 @@ body.subpage {
 		}
 	}
 }
+.page-bottom-image-v2 {
+	width: 100%;
+	float: left;
+	&.visible-xs {
+		display: none;
+	}
+	@include mid {
+		position: absolute;
+		left: 0;
+		bottom: -10px;
+	}
+	img {
+		width: 80%;
+		height: auto;
+		position: relative;
+		@include mid {
+			transform: translateX(30%);
+		}
+	}
+	@media screen and (max-width: $midwidth - 1px) {
+		&.hidden-xs {display:none!important;}
+		&.visible-xs {
+			display: block;
+			position: relative;
+			bottom: -10px;
+			text-align: center;
+		}
+	}
+}
+#page-content.has-bottom-image {
+	.col-right {
+		@include mid {
+			padding-bottom: 20%;
+		}
+	}
+}
 
 .page-inner {
 	padding: 10vh 20vw 30px 7vw;
+	background: #FFF;
 	&.hidden {
 		display: none;
 		visibility: hidden;
@@ -1159,20 +1201,25 @@ body.subpage {
 		width: 100%;
 		position: relative;
 		z-index: 20;
+		background-color: #FFF;
+		padding-bottom: 30px;
 		@include mid {
 			width: 50%;
 			position: absolute;
 			top: 0;
 			right: 0;
+			background-color: transparent;
+			padding-bottom: 0;
 		}
 	}
 }
 
-body.single-projects,
-body.page-template-page-work {
+body.subpage {
 	#page {
 		width: 100%;
 		float: left;
+		overflow-x: hidden;
+		overflow-y: auto;
 		&:after {
 			content:"";
 			display: block;
@@ -1190,13 +1237,21 @@ body.page-template-page-work {
 			}
 		}
 	}
-}
-body.single-projects {
 	#primary {
 		position: relative;
 		z-index: 10;
 	}
+	&.green-title-div {
+		#page:after {
+			background: -moz-linear-gradient(top,  rgba($color_green,0.65) 0%, rgba(0,0,0,0) 100%);
+			background: -webkit-linear-gradient(top,  rgba($color_green,0.65) 0%,rgba(0,0,0,0) 100%);
+			background: linear-gradient(to bottom,  rgba($color_green,0.65) 0%,rgba(0,0,0,0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_green', endColorstr='#00000000',GradientType=0 );
+		}
+	}
 }
+
+
 .content-area.work-page {
 	position: relative;
 	z-index: 10;
@@ -1353,8 +1408,94 @@ body.single-projects {
 			float: left;
 		}
 	}
+	#subnav {
+		width: 100%;
+		position: fixed;
+		top: 15%;
+		left: 0;
+		z-index: 999;
+		visibility: hidden;
+		opacity: 0;
+		transition: all ease .3s;
+		.wrapper {
+			max-width: 1200px;
+		}
+		a {
+			color: #000;
+			font-size: 20px;
+			font-weight: 600;
+			text-transform: uppercase;
+			text-decoration: none;
+			&:hover {
+				color: $color_primary;
+			}
+		}
+	}
+	.fullwidth-images.show-nav {
+		#subnav {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
 }
 
+.custom-content-repeater {
+	.entry {
+		margin-bottom: 50px;
+		@include mid {
+			margin-bottom: 70px;
+		}
+	}
+	.entry:last-child {
+		margin-bottom: 0;
+	}
+	.small-title {
+		margin: 0 0;
+		text-transform: uppercase;
+		font-size: 1.35em;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+	.big-title {
+		font-family: $font_secondary;
+		font-size: 2.5rem;
+		font-weight: 400;
+		line-height: 1.1;
+		display: inline-block;
+		position: relative;
+		margin: 0 0 10px;
+		@include tab {
+			font-size: 3.4rem;
+		}
+	}	
+	.titlediv {
+		position: relative;
+		.big-title-wrap {
+			display: inline-block;
+			position: relative;
+			h2 {
+				display: inline-block;
+			}
+		}
+		.big-title span {
+			display: inline-block;
+			position: relative;
+		}
+		.squiggle {
+			width: 100px;
+			height: auto;
+			&.top {
+				position: absolute;
+			}
+		}
+	}
+	.buttondiv {
+		margin-top: 15px;
+	}
+	.more-btn.get-started {
+		font-size: 1.5rem;
+	}
+}
 
 /* FOOTER */
 .site-footer {

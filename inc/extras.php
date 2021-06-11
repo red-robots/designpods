@@ -15,6 +15,15 @@
  */
 function bellaworks_body_classes( $classes ) {
     // Adds a class of group-blog to blogs with more than 1 published author.
+    global $post;
+    $post_slug = (isset($post->post_name) && $post->post_name) ? $post->post_name : '';
+    $greenTitleDiv = array('services');
+    if($post_slug) {
+        if( in_array($post_slug,$greenTitleDiv) ) {
+            $classes[] = 'green-title-div';
+        }
+    }
+
     if ( is_multi_author() ) {
         $classes[] = 'group-blog';
     }

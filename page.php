@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <div id="primary" class="content-area">
 	<?php while ( have_posts() ) : the_post(); ?>
 
@@ -14,7 +13,7 @@
 				<h1 class="page-title"><?php the_title(); ?></h1>
 
 				<?php if ($bottomImage) { ?>
-				<div class="page-bottom-image hide-xs">
+				<div class="page-bottom-image hide-xs wow fadeIn">
 					<img id="bottom-image" src="<?php echo $bottomImage['url'] ?>" alt="<?php echo $bottomImage['title'] ?>">
 				</div>	
 				<?php } ?>
@@ -64,7 +63,7 @@
 
 
 		<?php if ($bottomImage) { ?>
-		<div class="page-bottom-image visible-xs">
+		<div class="page-bottom-image white visible-xs">
 			<div class="image" style="background-image:url('<?php echo $bottomImage['url'] ?>')"></div>
 			<img id="bottom-image" src="<?php echo $bottomImage['url'] ?>" alt="<?php echo $bottomImage['title'] ?>">
 		</div>	

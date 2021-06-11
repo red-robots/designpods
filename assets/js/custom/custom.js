@@ -82,12 +82,16 @@ jQuery(document).ready(function ($) {
 });// END #####################################    END
 
 $(function () {
-  if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-    $('.para').height($(window).height() * 0.5 | 0);
-  } else {
-    $(window).resize(function () {
-      var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
-      $('.para').height(parallaxHeight);
-    }).trigger('resize');
-  }
+
+	if( $('.para').length>0 ) {
+	  if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+	    $('.para').height($(window).height() * 0.5 | 0);
+	  } else {
+	    $(window).resize(function () {
+	      var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
+	      $('.para').height(parallaxHeight);
+	    }).trigger('resize');
+	  }
+	}
+	
 });
