@@ -619,9 +619,12 @@ div.more {
 			}
 		}
 		img.doughnut {
-			width: 120%;
+			width: 100%;
 			height: auto;
 			float: left;
+			@include mid {
+				width: 120%;
+			}
 		}
 		&.right {
 			@include flexgroup-center();
@@ -995,9 +998,10 @@ body.subpage {
 		font-family: $font_secondary;
 		font-size: 4rem;
 		line-height: 1.2;
-		margin: 0 0;
+		margin: 0 0 30px;
 		@include mid {
 			font-size: 7rem;
+			margin-bottom: 0;
 		}
 	}
 	.logo {
@@ -1049,6 +1053,11 @@ body.subpage {
 
 #page-content {
 	position: relative;
+	&.has-bottom-image {
+		.col-left {
+			padding-bottom: 0;
+		}
+	}
 }
 .page-bottom-image {
 	width: 100vw;
@@ -1059,6 +1068,10 @@ body.subpage {
 	img {
 		width: 100%;
 		height: auto;
+		&#bottom-image {
+			position: relative;
+			bottom: -10px;
+		}
 	}
 	&.hide-xs {
 		display: none;
@@ -1101,14 +1114,15 @@ body.subpage {
 		display: none;
 	}
 	@include mid {
-		position: absolute;
+		position: relative;
 		left: 0;
-		bottom: -10px;
+		bottom: -15px;
 	}
 	img {
 		width: 80%;
 		height: auto;
 		position: relative;
+		bottom: -10px;
 		@include mid {
 			transform: translateX(30%);
 		}
@@ -1126,7 +1140,7 @@ body.subpage {
 #page-content.has-bottom-image {
 	.col-right {
 		@include mid {
-			padding-bottom: 20%;
+			padding-bottom: 0;
 		}
 	}
 }
