@@ -4,6 +4,21 @@
  */
 get_header(); ?>
 
+<style type="text/css">
+.alt-title:after {
+	content: "";
+	display: inline-block;
+	width: 90px;
+	height: 80px;
+	background-image: url('<?php echo get_bloginfo("template_url") ?>/images/squiggles/svg/animated/arrow_animate.svg');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	margin-top: 20px;
+}
+</style>
+
 <div id="primary" class="content-area work-page">
 	<?php while ( have_posts() ) : the_post(); ?>
 
@@ -44,9 +59,6 @@ get_header(); ?>
 					<div class="titlediv">
 						<h2 class="alt-title">
 							<?php echo $alt_title ?>
-							<span class="svg-bottom arrow-down">
-								<?php include( locate_template('images/squiggles/svg/animated/arrow_animate.svg') ); ?>
-							</span>
 						</h2>
 					</div>
 					<?php } ?>

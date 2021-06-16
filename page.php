@@ -1,4 +1,34 @@
 <?php get_header(); ?>
+<style type="text/css">
+	.alt-title {
+		position: relative;
+	}
+	.alt-title:before {
+		content: "";
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		background-image: url('<?php echo get_bloginfo("template_url") ?>/images/squiggles/svg/animated/traingle_x.svg');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: -35px;
+		left: -44px;
+	}
+	.alt-title:after {
+		content: "";
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		background-image: url('<?php echo get_bloginfo("template_url") ?>/images/squiggles/svg/animated/sprinkle.svg');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		margin-top: 20px;
+	}
+</style>
 <div id="primary" class="content-area">
 	<?php while ( have_posts() ) : the_post(); ?>
 
@@ -23,6 +53,7 @@
 			$alt_title = get_field("alternative_title"); 
 			$main_content = "";
 			?>
+
 			<div class="col-right pagetext">
 				<div class="page-inner hidden">
 
@@ -30,13 +61,7 @@
 					<?php if ($alt_title) { ?>
 					<div class="titlediv">
 						<h2 class="alt-title">
-							<span class="svg-top">
-								<?php include( locate_template('images/squiggles/svg/animated/traingle_x.svg') ); ?>
-							</span>
 							<?php echo $alt_title ?>
-							<span class="svg-bottom">
-								<?php include( locate_template('images/squiggles/svg/animated/sprinkle.svg') ); ?>
-							</span>
 						</h2>
 					</div>
 					<?php } ?>
