@@ -56,6 +56,20 @@ get_header(); ?>
 		<?php } ?>
 
 	</div><!-- #primary -->
+<script>
+jQuery(document).ready(function($){
+	adjust_bottom_image();
+	$(window).resize(function(){
+		adjust_bottom_image();
+	});
 
+	function adjust_bottom_image() {
+		if( $("#bottom-image").length>0 ) {
+			var bottomImageHeight = ($("#bottom-image").height()) - 50;
+			$(".col-right.pagetext").css("padding-bottom",bottomImageHeight+"px");
+		}
+	}
+});
+</script>
 <?php
 get_footer();

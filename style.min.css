@@ -1930,15 +1930,22 @@ body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradi
 .custom-content-repeater .buttondiv{margin-top:15px}
 .custom-content-repeater .more-btn.get-started{font-size:1.5rem}
 .error-404 #page-content{position:relative;z-index:30}
-.error-404 .page404-bottom-image{position:relative;bottom:-20px}
-.error-404 .page404-bottom-image #bottom-image{width:100%;height:auto}
 .error-404 .textdiv ul.links{margin:0;padding:0;list-style:none;position:relative;top:-10px}
 .error-404 .textdiv ul.links a{display:inline-block;text-decoration:none;color:#f88899}
 .error-404 .textdiv ul.links a:hover{color:#fceaea}
 .error-404 .page-inner .alt-title{padding-right:20px}
 .error-404 .svg-right{display:inline-block;position:absolute;top:10%;right:-15px;width:60px}
 .error-404 .svg-right img{width:100%;height:auto}
-@media screen and (max-width:600px){.error-404 .page-inner{padding:5vh 20vw 30px 7vw}
+@media screen and (max-width:600px){.error-404 .page-inner{padding:5vh 10vw}
+}.page404-bottom-image{position:relative;bottom:-20px;text-align:right}
+@media(min-width:860px){.page404-bottom-image{position:absolute;right:0;bottom:-20px}
+}.page404-bottom-image.hidden{opacity:0;visibility:hidden;width:100%}
+@media screen and (max-width:860px){.page404-bottom-image.hidden{display:none}
+}.page404-bottom-image #bottom-image{width:95vw;height:auto}
+@media screen and (max-width:860px){.page404-bottom-image #bottom-image{width:100%}
+}.page404-bottom-image.fixed{width:100%;position:absolute;left:0;bottom:0;z-index:5}
+@media screen and (max-width:860px){.page404-bottom-image.fixed{position:relative}
+.page404-bottom-image.fixed img{display:block;width:100%;height:auto}
 }@media screen and (max-width:860px){body.page-template-page-services .page-inner{padding-bottom:30px}
 }@media(min-width:860px){body.page-template-page-services #page-content.has-bottom-image .col-right{padding-bottom:20vh}
 }.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:0;padding-bottom:0}

@@ -1558,14 +1558,6 @@ body.subpage {
 		position: relative;
 		z-index: 30;
 	}
-	.page404-bottom-image {
-		position: relative;
-		bottom: -20px;
-		#bottom-image {
-			width: 100%;
-			height: auto;
-		}
-	}
 	.textdiv {
 		ul.links {
 			margin: 0 0;
@@ -1599,11 +1591,50 @@ body.subpage {
 	}
 	@media screen and (max-width: $xswidth) {
 		.page-inner {
-			padding: 5vh 20vw 30px 7vw;
+			padding: 5vh 10vw;
 		}
 	}
 }
-
+.page404-bottom-image {
+	position: relative;
+	bottom: -20px;
+	text-align: right;
+	@include tab {
+		position: absolute;
+		right: 0;
+		bottom: -20px;
+	}
+	&.hidden {
+		opacity: 0;
+		visibility: hidden;
+		width: 100%;
+		@include gt($tabwidth) {
+			display: none;
+		}
+	}
+	#bottom-image {
+		width: 95vw;
+		height: auto;
+		@include gt($tabwidth) {
+			width: 100%;
+		}
+	}
+	&.fixed {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 5;
+		@include gt($tabwidth) {
+			position: relative;
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
 body.page-template-page-services {
 	.page-inner {
 		@include gt($tabwidth) {
