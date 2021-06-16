@@ -147,6 +147,12 @@ body {
 a,textarea,input,button,select {
 	transition: all ease .3s;
 }
+a {
+	color: $color_pink3;
+	&:hover {
+		color: $color_pink1;
+	}
+}
 .font2 {
 	font-family: $font_secondary!important;
 }
@@ -1148,6 +1154,9 @@ body.subpage {
 .page-inner {
 	padding: 10vh 20vw 30px 7vw;
 	background: #FFF;
+	@include tab {
+		background: transparent;
+	}
 	&.hidden {
 		display: none;
 		visibility: hidden;
@@ -1232,8 +1241,8 @@ body.subpage {
 	#page {
 		width: 100%;
 		float: left;
-		overflow-x: hidden;
-		overflow-y: auto;
+		// overflow-x: hidden;
+		// overflow-y: auto;
 		&:after {
 			content:"";
 			display: block;
@@ -1511,13 +1520,61 @@ body.subpage {
 	}
 }
 
+.error-404  {
+	#page-content {
+		position: relative;
+		z-index: 30;
+	}
+	.page404-bottom-image {
+		position: relative;
+		bottom: -20px;
+		#bottom-image {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.textdiv {
+		ul.links {
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+			position: relative;
+			top: -10px;
+			a {
+				display: inline-block;
+				text-decoration: none;
+				color: $color_pink3;
+				&:hover {
+					color: $color_pink1;
+				}
+			}
+		}
+	}
+	.page-inner .alt-title {
+		padding-right: 20px;
+	}
+	.svg-right {
+		display: inline-block;
+		position: absolute;
+    top: 10%;
+    right: -15px;
+    width: 60px;
+	}
+	@media screen and (max-width: $xswidth) {
+		.page-inner {
+			padding: 5vh 20vw 30px 7vw;
+		}
+	}
+}
+
+
 /* FOOTER */
 .site-footer {
 	background-color: $color_pink1;
 	position: relative;
 	z-index: 20;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 0;
+	padding-bottom: 0;
 	&:before {
 		content: "";
 		display: block;
@@ -1527,6 +1584,13 @@ body.subpage {
 		position: absolute;
 		top: -5px;
 		left: 0;;
+	}
+	.wrapper {
+		padding-top: 33px;
+		padding-bottom: 30px;
+	}
+	.footer-line {
+		top: -8px;
 	}
 	.social-media {
 		margin: 0 0;

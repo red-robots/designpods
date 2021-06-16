@@ -9,55 +9,52 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area error-404 not-found">
+		<div id="page-content" class="sp-flexwrap">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bellaworks' ); ?></h1>
-				</header><!-- .page-header -->
+			<?php
+				$title = get_field("404_title","option");
+				$title2 = get_field("404_title2","option");
+				$text = get_field("404_text","option");
+				$bottomImage = get_field("404_bottom_image","option");
+			?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'bellaworks' ); ?></p>
+			<div class="col-left">
+				<?php get_template_part("parts/subpage-logo"); ?>
+				<h1 class="page-title"><?php esc_html_e( $title, 'bellaworks' ); ?></h1>
+			</div>
 
-					<?php
-						get_search_form();
+			<div class="col-right pagetext">
+				<div class="page-inner">
+					<?php if ($title2) { ?>
+					<div class="titlediv">
+						<h2 class="alt-title">
+							<span class="svg-right">
+								<?php include( locate_template('images/squiggles/svg/animated/traingle_x.svg') ); ?>
+							</span>
+							<?php echo $title2 ?>
+						</h2>
+					</div>
+					<?php } ?>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+					<?php if ($title2) { ?>
+					<div class="textdiv">
+						<?php echo $text ?>
+					</div>
+					<?php } ?>
 
-						// Only show the widget if site has multiple categories.
-						if ( bellaworks_categorized_blog() ) :
-					?>
+				</div>
+			</div>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bellaworks' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+		</div>
 
-					<?php
-						endif;
+		<?php if ($bottomImage) { ?>
+		<div class="page404-bottom-image">
+			<div class="image" style="background-image:url('<?php echo $bottomImage['url'] ?>')"></div>
+			<img id="bottom-image" src="<?php echo $bottomImage['url'] ?>" alt="<?php echo $bottomImage['title'] ?>">
+		</div>	
+		<?php } ?>
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'bellaworks' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
