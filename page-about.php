@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/* 
+ * Template Name: About
+ */
+get_header(); ?>
 <style type="text/css">
 	.alt-title {
 		position: relative;
@@ -37,7 +41,7 @@
 		}
 	}
 </style>
-<div id="primary" class="content-area">
+<div id="primary" class="content-area about-page">
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<?php $bottomImage = get_field("bottom_image"); ?>

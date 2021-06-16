@@ -67,7 +67,7 @@ get_header(); ?>
 										<?php if ($top_squiggles_position=='left') { ?>
 											#custom-entry<?php echo $i?> .titlediv:before { left: -45px; }
 											@media screen and (max-width: 768px) {
-												#custom-entry<?php echo $i?> .titlediv:before { top: -60px!important; left: -10px; width:60px; height:60px;}
+												#custom-entry<?php echo $i?> .titlediv:before { top: -30px!important; left: -10px; width:60px; height:60px;}
 											}
 										<?php } ?>
 										<?php if ($top_squiggles_position=='right') { ?>
@@ -86,7 +86,7 @@ get_header(); ?>
 												right: -85px;
 											}
 											@media screen and (max-width: 768px) {
-												#custom-entry<?php echo $i?> .big-title span:before {right: -18px; top: -43px;width: 80px; height: 80px;}
+												#custom-entry<?php echo $i?> .big-title span:before {right: -75px; top: -43px;width: 80px; height: 80px;}
 											}
 										<?php } ?>
 									<?php } ?>
