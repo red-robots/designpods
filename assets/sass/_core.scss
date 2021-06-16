@@ -1559,6 +1559,10 @@ body.subpage {
     top: 10%;
     right: -15px;
     width: 60px;
+    img {
+    	width: 100%;
+    	height: auto;
+    }
 	}
 	@media screen and (max-width: $xswidth) {
 		.page-inner {

@@ -30,7 +30,7 @@ get_header(); ?>
 					<div class="titlediv">
 						<h2 class="alt-title">
 							<span class="svg-right">
-								<?php include( locate_template('images/squiggles/svg/animated/traingle_x.svg') ); ?>
+								<img src="<?php echo get_bloginfo("template_url") ?>/images/squiggles/svg/animated/traingle_x.svg" alt="" aria-hidden="true">
 							</span>
 							<?php echo $title2 ?>
 						</h2>

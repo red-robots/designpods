@@ -1934,6 +1934,7 @@ body.subpage.green-title-div #page:after{background:-webkit-linear-gradient(top,
 .error-404 .textdiv ul.links a:hover{color:#fceaea}
 .error-404 .page-inner .alt-title{padding-right:20px}
 .error-404 .svg-right{display:inline-block;position:absolute;top:10%;right:-15px;width:60px}
+.error-404 .svg-right img{width:100%;height:auto}
 @media screen and (max-width:600px){.error-404 .page-inner{padding:5vh 20vw 30px 7vw}
 }.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:0;padding-bottom:0}
 .site-footer:before{content:"";display:block;width:100%;height:20px;background-color:#fceaea;position:absolute;top:-5px;left:0}
