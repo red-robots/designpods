@@ -1841,13 +1841,11 @@ body.subpage .logo a img{width:100%;height:auto}
 @media(min-width:960px){.page-bottom-image{position:absolute;bottom:0}
 .page-bottom-image.hide-xs{display:block}
 .page-bottom-image.visible-xs{display:none}
-}@media screen and (max-width:860px){.page-bottom-image div.image{display:block;height:380px;background-size:cover;background-position:bottom center}
-.page-bottom-image img{display:none}
 }.page-bottom-image-v2{width:100%;float:left}
 .page-bottom-image-v2.visible-xs{display:none}
 @media(min-width:960px){.page-bottom-image-v2{position:absolute;left:0;bottom:0}
-}.page-bottom-image-v2 img{width:80%;height:auto;position:relative;bottom:0}
-@media(min-width:960px){.page-bottom-image-v2 img{-webkit-transform:translateX(30%);-ms-transform:translateX(30%);transform:translateX(30%)}
+}.page-bottom-image-v2 img{width:65vw;height:auto;position:relative;bottom:0}
+@media(min-width:960px){.page-bottom-image-v2 img{width:80%;-webkit-transform:translateX(30%);-ms-transform:translateX(30%);transform:translateX(30%)}
 }@media screen and (max-width:959px){.page-bottom-image-v2.hidden-xs{display:none !important}
 .page-bottom-image-v2.visible-xs{display:block;position:relative;bottom:-10px;text-align:center}
 }@media(min-width:960px){#page-content.has-bottom-image .col-right{padding-bottom:0}
@@ -1941,11 +1939,12 @@ body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradi
 .error-404 .svg-right{display:inline-block;position:absolute;top:10%;right:-15px;width:60px}
 .error-404 .svg-right img{width:100%;height:auto}
 @media screen and (max-width:600px){.error-404 .page-inner{padding:5vh 20vw 30px 7vw}
+}@media screen and (max-width:860px){body.page-template-page-services .page-inner{padding-bottom:30px}
 }@media(min-width:860px){body.page-template-page-services #page-content.has-bottom-image .col-right{padding-bottom:20vh}
 }.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:0;padding-bottom:0}
 .site-footer:before{content:"";display:block;width:100%;height:20px;background-color:#fceaea;position:absolute;top:-5px;left:0}
 .site-footer .wrapper{padding-top:33px;padding-bottom:30px}
-.site-footer .footer-line{top:-8px}
+.site-footer .footer-line{top:-7px}
 .site-footer .social-media{margin:0;padding:0;text-align:center}
 @media(min-width:860px){.site-footer .social-media{text-align:right}
 }.site-footer .social-media a{width:40px;height:40px;font-size:20px;line-height:1}

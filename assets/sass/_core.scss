@@ -1103,15 +1103,15 @@ body.subpage {
 		}
 	}
 	@include gt($tabwidth) {
-		div.image {
-			display: block;
-			height: 380px;
-			background-size: cover;
-			background-position: bottom center;
-		}
-		img {
-			display: none;
-		}
+		// div.image {
+		// 	display: block;
+		// 	height: 380px;
+		// 	background-size: cover;
+		// 	background-position: bottom center;
+		// }
+		// img {
+		// 	display: none;
+		// }
 	}
 }
 .page-bottom-image-v2 {
@@ -1129,11 +1129,12 @@ body.subpage {
 		bottom: 0;
 	}
 	img {
-		width: 80%;
+		width: 65vw;
 		height: auto;
 		position: relative;
 		bottom: 0;
 		@include mid {
+			width: 80%;
 			transform: translateX(30%);
 		}
 	}
@@ -1604,6 +1605,11 @@ body.subpage {
 }
 
 body.page-template-page-services {
+	.page-inner {
+		@include gt($tabwidth) {
+			padding-bottom: 30px;
+		}
+	}
 	@include tab {
 		#page-content.has-bottom-image .col-right {
 			padding-bottom: 20vh;
@@ -1633,7 +1639,7 @@ body.page-template-page-services {
 		padding-bottom: 30px;
 	}
 	.footer-line {
-		top: -8px;
+		top: -7px;
 	}
 	.social-media {
 		margin: 0 0;
