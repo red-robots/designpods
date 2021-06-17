@@ -197,6 +197,7 @@ $row5ImageType = get_field("row5_image_type");
 $row5Type = ($row5ImageType) ? $row5ImageType : '';
 $row5_image = ($row5Type) ? get_field("row5_".$row5Type) : ""; 
 $row5Clients = get_field("row5_clients");
+$row5Image = get_field("row5_image");
 $row5Title = ( isset($row5Clients['heading']) && $row5Clients['heading'] ) ? $row5Clients['heading'] : '';
 $row5Brands = ( isset($row5Clients['brands']) && $row5Clients['brands'] ) ? $row5Clients['brands'] : '';
 $row5BrandsMobile = ( isset($row5Clients['brands_mobile']) && $row5Clients['brands_mobile'] ) ? $row5Clients['brands_mobile'] : '';
@@ -206,14 +207,10 @@ $row5BrandsMobile = ( isset($row5Clients['brands_mobile']) && $row5Clients['bran
 	<div class="wrapper sm">
 		<div class="illustrations">
 			<div class="flexwrap">
-
-				<?php if ($row5Type=='svg') { ?>
+				
+				<?php if($row5Image) { ?>
 				<div class="col graphic wow fadeIn" data-wow-delay="0.4s">
-					<div class="img-svg"><?php echo $row5_image ?></div>
-				</div>
-				<?php } else if($row5Type=='image') { ?>
-				<div class="col graphic wow fadeIn" data-wow-delay="0.4s">
-					<img src="<?php echo $row5_image['url'] ?>" alt="<?php echo $row5_image['title'] ?>" class="img-type">
+					<img src="<?php echo $row5Image['url'] ?>" alt="<?php echo $row5Image['title'] ?>" class="img-type">
 				</div>
 				<?php } ?>
 
