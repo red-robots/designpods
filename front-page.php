@@ -6,6 +6,7 @@
 <?php 
 $row1Text = get_field("row1_text"); 
 $row1TextMobile = get_field("row1_text_mobile"); 
+$row1MobileText = ($row1TextMobile) ? $row1TextMobile : $row1Text;
 ?>
 <div class="row-1 w100">
 	<div class="text">
@@ -15,8 +16,9 @@ $row1TextMobile = get_field("row1_text_mobile");
 					<?php if ($row1Text) { ?>
 					<div id="row1-title" class="row1-title"><?php echo $row1Text ?></div>
 					<?php } ?>
-					<?php if ($row1TextMobile) { ?>
-					<div id="row1-title-mobile" class="row1-title"><?php echo $row1TextMobile ?></div>
+
+					<?php if ($row1MobileText) { ?>
+					<div id="row1-title-mobile" class="row1-title"><?php echo $row1MobileText ?></div>
 					<?php } ?>
 				</div>
 			</div>
@@ -207,7 +209,7 @@ $row5BrandsMobile = ( isset($row5Clients['brands_mobile']) && $row5Clients['bran
 	<div class="wrapper sm">
 		<div class="illustrations">
 			<div class="flexwrap">
-				
+
 				<?php if($row5Image) { ?>
 				<div class="col graphic wow fadeIn" data-wow-delay="0.4s">
 					<img src="<?php echo $row5Image['url'] ?>" alt="<?php echo $row5Image['title'] ?>" class="img-type">

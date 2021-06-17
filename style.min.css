@@ -1965,7 +1965,7 @@ body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradi
 @media screen and (max-width:600px){#wpadminbar{position:fixed}
 }@media screen and (max-width:820px){.wrapper,.wrapper.sm{max-width:100%}
 html,body,.site{height:auto}
-.row-1{height:40vh;position:relative}
+.row-1{height:45vh;position:relative}
 .row-1 #row1-title{display:none}
 .row-1 #row1-title-mobile{display:block}
 .row-1 .balloondiv{top:15%;left:10vw}
@@ -1998,4 +1998,6 @@ html,body,.site{height:auto}
 #thinking-svg-mobile{display:block;width:100%;margin-bottom:20px}
 #thinking-svg-mobile img{display:block;width:80%;height:auto;margin:0 auto}
 }@media screen and (min-width:480px) and (max-width:820px){.row-4 .box{width:50%}
+.row-1{height:85vh}
+.row-1 .row1-title{font-size:10vw}
 }

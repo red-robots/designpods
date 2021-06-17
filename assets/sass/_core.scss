@@ -1744,7 +1744,7 @@ body.page-template-page-services {
 		height: auto;
 	}
 	.row-1 {
-		height: 40vh;
+		height: 45vh;
 		position: relative;
 		#row1-title {display: none;}
 		#row1-title-mobile {
@@ -1878,4 +1878,6 @@ body.page-template-page-services {
 	.row-4 .box {
 		width: 50%;
 	}
+	.row-1 {height: 85vh;}
+	.row-1 .row1-title {font-size: 10vw;}
 }
