@@ -1883,7 +1883,7 @@ body.subpage.page-template-page-about #page:after{background:-webkit-linear-grad
 body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradient(top,rgba(252,234,234,0.65) 0,transparent 100%);background:linear-gradient(to bottom,rgba(252,234,234,0.65) 0,transparent 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6fceaea',endColorstr='#00000000',GradientType=0)}
 .content-area.work-page{position:relative;z-index:10}
 .content-area.work-page .sp-flexwrap .col-left{background:transparent}
-.masonry-wrapper{width:100%;float:left;position:relative}
+.masonry-wrapper{width:100%;float:left;position:relative;padding-bottom:50px}
 .masonry-wrapper .wrapper{max-width:1300px;width:100%;padding-left:15px;padding-right:15px;position:relative;z-index:10;text-align:center}
 .masonry-wrapper .masonry{width:100%;float:left}
 .masonry-wrapper .masonry *{box-sizing:border-box;-webkit-transition:all ease .3s;transition:all ease .3s}
@@ -1894,14 +1894,22 @@ body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradi
 .masonry-wrapper .masonry .item img{width:100%;height:auto;float:left}
 .masonry-wrapper .masonry .item img.helper2{display:none}
 .masonry-wrapper .masonry .item:hover .inner{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
-@media screen and (max-width:1200px){.masonry-wrapper .masonry .item.span70{width:66.6% !important}
-.masonry-wrapper .masonry .item.span30{width:33.33% !important}
-}@media screen and (max-width:975px){.masonry-wrapper .masonry .item.span30{width:50% !important}
-.masonry-wrapper .masonry .item.span70{width:100% !important}
-.masonry-wrapper .masonry .item img.helper1{display:none}
-.masonry-wrapper .masonry .item img.helper2{display:block}
-.masonry-wrapper .masonry .item.span30.span-mobile100,.masonry-wrapper .masonry .item.span70.span-mobile100,.masonry-wrapper .masonry .item.span-mobile100{width:100% !important}
-.masonry-wrapper .masonry .item.span30.span-mobile50,.masonry-wrapper .masonry .item.span70.span-mobile50,.masonry-wrapper .masonry .item.span-mobile50{width:50% !important}
+@media screen and (max-width:1200px){.masonry-wrapper .masonry .item{height:50vh;padding:0;float:left;overflow:hidden}
+.masonry-wrapper .masonry .item img{display:none}
+.masonry-wrapper .masonry .item.gridrow2{height:40vh}
+.masonry-wrapper .masonry .item.span70{width:66.667% !important}
+.masonry-wrapper .masonry .item.span50{width:50% !important}
+.masonry-wrapper .masonry .item.span30{width:33.333% !important}
+.masonry-wrapper .masonry .projlink{display:block;width:100% !important;height:100%;margin:6px}
+.masonry-wrapper .masonry .projlink .inner{width:100%;height:100%}
+.masonry-wrapper .masonry .item.gridrow2{height:100vh}
+}@media screen and (min-width:769px) and (max-width:820px){.masonry-wrapper .masonry .item{height:80vh}
+.masonry-wrapper .masonry .item.gridrow2{height:160vh}
+}@media screen and (min-width:501px) and (max-width:800px){.masonry-wrapper .masonry .item{height:40vh}
+.masonry-wrapper .masonry .item.gridrow2{height:79.85vh}
+}@media screen and (max-width:500px){.masonry-wrapper .masonry .item{height:140px}
+.masonry-wrapper .masonry .item.gridrow2{height:280px}
+}@media screen and (max-width:1200px){.masonry-wrapper{padding-bottom:40px}
 }.projects-gallery .wrapper{max-width:100%;padding-left:15px;padding-right:15px;position:relative;z-index:10;text-align:center}
 @media(min-width:960px){.projects-gallery .wrapper{max-width:85%}
 }.projects-gallery .wrapper table{width:100%}

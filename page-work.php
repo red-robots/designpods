@@ -137,6 +137,9 @@ $projects = get_field("projects");
 					$spanClass .= ' span-mobile' . $imagewidth_mobile;
 					$spanClass .= ' span-mobile';
 				}
+				if($gridrow) {
+					$spanClass .= ' gridrow' . $gridrow;
+				}
 				?>	
 				<div id="masonry-item<?php echo $i?>" class="item<?php echo $spanClass?>"<?php echo $styleAtt ?>>
 					<?php echo $link_open; ?>
