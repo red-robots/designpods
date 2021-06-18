@@ -96,9 +96,6 @@ if($row3_image || $row3_text) { ?>
 			<?php if ($row3_image) { ?>
 			<div class="col left fadeIn wow" data-wow-duration="0.5s">
 				<div class="inner doughnut-graphic">
-					<span class="art1">
-						<?php include( locate_template('images/animated/stars.svg') ) ?>
-					</span>
 					<img class="doughnut" src="<?php echo $row3_image['url'] ?>" alt="<?php echo $row3_image['title'] ?>" />
 				</div>
 			</div>

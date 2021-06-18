@@ -735,19 +735,6 @@ div.more {
 		// 	background-repeat: no-repeat;
 		// 	background-size: contain;
 		// }
-		&:after {
-			content:"";
-			display: block;
-			width: 2vw;
-			height: 2vw;
-			position: absolute;
-	    bottom: 5vw;
-    	left: 4vw;
-			background-image: url("images/squiggles/png/line_star.png");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: contain;
-		}
 	}
 	.text {
 		h2 {
@@ -755,6 +742,31 @@ div.more {
 			font-size: 5.2vw;
 			font-weight: 400;
 			line-height: 1.1;
+		}
+	}
+	.doughnut-graphic {
+		position: relative;
+		&:before, &:after {
+			content:"";
+			display: block;
+			position: absolute;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		&:before {
+			width: 80px;
+			height: 80px;
+			top: 0;
+			right: 0;
+			background-image: url("images/svg/stars.svg");
+		}
+		&:after {
+			width: 100px;
+			height: 100px;
+			bottom: 2vw;
+			left: 2vw;
+			background-image: url("images/svg/line_star.svg");
 		}
 	}
 }
@@ -1896,11 +1908,15 @@ body.page-template-page-services {
 			margin-bottom: 20px;
 			margin-top: 20px;
 		}
-		.inner:after {
-			width: 20px;
-			height: 20px;
-			bottom: 9vw;
-			left: 15vw;
+		.doughnut-graphic {
+			&:before {
+				width: 60px;
+				height: 60px;
+			}
+			&:after {
+				width: 70px;
+				height: 70px;
+			}
 		}
 	}
 	.row-4 {

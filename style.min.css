@@ -1771,8 +1771,11 @@ div.more{margin-top:25px}
 .row-3 .inner{width:100%;float:left;position:relative}
 .row-3 .inner .art1{display:block;width:60px;height:60px;position:absolute;top:24px;right:70px}
 .row-3 .inner .art1 svg{width:100%}
-.row-3 .inner:after{content:"";display:block;width:2vw;height:2vw;position:absolute;bottom:5vw;left:4vw;background-image:url("images/squiggles/png/line_star.png");background-position:center;background-repeat:no-repeat;background-size:contain}
 .row-3 .text h2{margin:0;font-size:5.2vw;font-weight:400;line-height:1.1}
+.row-3 .doughnut-graphic{position:relative}
+.row-3 .doughnut-graphic:before,.row-3 .doughnut-graphic:after{content:"";display:block;position:absolute;background-position:center;background-repeat:no-repeat;background-size:contain}
+.row-3 .doughnut-graphic:before{width:80px;height:80px;top:0;right:0;background-image:url("images/svg/stars.svg")}
+.row-3 .doughnut-graphic:after{width:100px;height:100px;bottom:2vw;left:2vw;background-image:url("images/svg/line_star.svg")}
 .row-4{position:relative;background:#acd5ad;z-index:14}
 .row-4:before{content:"";width:100%;height:70px;background:#FFF;position:absolute;top:-2px;left:0}
 @media(min-width:600px){.row-4:before{height:20vh}
@@ -2000,7 +2003,8 @@ html,body,.site{height:auto}
 .row-2 .wrapper{padding-top:150px;padding-bottom:50px;padding-left:30px;padding-right:30px}
 .row-3{text-align:center}
 .row-3 .text h2{font-size:35px;padding-left:40px;padding-right:40px;margin-bottom:20px;margin-top:20px}
-.row-3 .inner:after{width:20px;height:20px;bottom:9vw;left:15vw}
+.row-3 .doughnut-graphic:before{width:60px;height:60px}
+.row-3 .doughnut-graphic:after{width:70px;height:70px}
 .row-4{text-align:center}
 .row-4:before{height:28%}
 .row-4 .box{width:100%;padding:3vw 30px}
