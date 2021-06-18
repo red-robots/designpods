@@ -284,7 +284,7 @@ if( $row6_title || $row6_text ) { ?>
 
 					<?php if( $btn6Link || $btn6Name ) { ?>
 					<div class="more">
-						<a href="<?php echo $btn6Link ?>" target="<?php echo $btn6Target ?>" class="more-btn"><?php echo $btn6Name ?></a>
+						<a href="<?php echo $btn6Link ?>" target="<?php echo $btn6Target ?>" class="more-btn btn-pill white-pink"><?php echo $btn6Name ?></a>
 					</div>
 					<?php } ?>
 				</div>
