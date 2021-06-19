@@ -1280,7 +1280,7 @@ body.subpage {
 			display: inline-block;
 			position: absolute;
 			top: -55px;
-			left: -10px;
+			left: -25px;
 			width: 60px;
 			@include tab {
 				top: -35px;
@@ -1587,6 +1587,7 @@ body.subpage {
 	.fullwidth-images {
 		width: 100%;
 		float: left;
+		position: relative;
 		.wrapper {
 			max-width: $wrapper;
 			width: 100%;
@@ -1597,16 +1598,36 @@ body.subpage {
 			height: auto;
 			float: left;
 		}
+		.fig-img {
+			margin: 0 0;
+			position: relative;
+		}
+	}
+	.navRevealHelper {
+		position: absolute;
+		bottom: 20%;
+		left: 0;
+		width: 100%;
+		height: 25vh;
+	}
+	#offset-images {
+		width: 100%;
+		float: left;
 	}
 	#subnav {
 		width: 100%;
-		position: fixed;
-		top: 15%;
-		left: 0;
+		position: absolute;
+    left: 20px;
 		z-index: 999;
 		visibility: hidden;
 		opacity: 0;
 		transition: all ease .3s;
+		// @include mid {
+		// 	margin-top: -10vh;
+		// }
+		@include tab {
+			top: 80px;
+		}
 		.wrapper {
 			max-width: 1200px;
 		}
@@ -1625,6 +1646,8 @@ body.subpage {
 		#subnav {
 			visibility: visible;
 			opacity: 1;
+			position: fixed;
+			top: 70vh;
 		}
 	}
 }

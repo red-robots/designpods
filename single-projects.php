@@ -58,16 +58,28 @@
 					</div>
 				</div>
 				<div class="wrapper">
-				<?php foreach ($images as $row) { 
+				<?php 
+					$img_count = count($images);
+					$i=1; foreach ($images as $row) { 
 					$img = $row['image'];
-					?>
-					<figure class="fullwidth">
-						<img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" class="full-image">
-					</figure>
-				<?php } ?>
+					$isFirst = ($i==1) ? 'first':'next-img';?>
+						<?php if ($i>1) { ?>
+						<div id="offset-images">
+						<?php } ?>
+						<figure class="fullwidth fig-img <?php echo $isFirst ?>">
+							<img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" class="full-image">
+							<?php if ($i==1) { ?>
+							<div id="subNavHelper" class="navRevealHelper"></div>
+							<?php } ?>
+						</figure>
+					<?php if ($i==$img_count) { ?>
+						</div>
+					<?php } ?>
+				<?php $i++; } ?>
 				</div>
+				
 			</div>	
-			<?php } ?>
+			<?php  } ?>
 		</div>
 		
 	
@@ -78,14 +90,24 @@
 <script>
 jQuery(document).ready(function($){
 
-
 	$(window).scroll(function(){
-	  var inView = elementInViewport( document.getElementById('fullwidth-images') );
-	  if(inView) {
-	  	$("#fullwidth-images").addClass('show-nav');
-	  } else {
-	  	$("#fullwidth-images").removeClass('show-nav');
-	  }
+		var screen_width = $(window).width();
+		if(screen_width>820) {
+			var inView1 = elementInViewport( document.getElementById('subNavHelper') );
+		  var inView2 = elementInViewport( document.getElementById('offset-images') );
+		  if(inView1 || inView2) {
+		  	$("#fullwidth-images").addClass('show-nav');
+		  } else {
+		  	$("#fullwidth-images").removeClass('show-nav');
+		  }
+		} else {
+		  if( elementInViewport( document.getElementById('offset-images') ) ) {
+		  	$("#fullwidth-images").addClass('show-nav');
+			} else {
+				$("#fullwidth-images").removeClass('show-nav');
+			}
+		}
+	  
 	});
 
 	
