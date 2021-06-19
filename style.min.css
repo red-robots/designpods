@@ -1691,7 +1691,7 @@ a:hover{color:#fceaea}
 }.balloonNav span.bar:after{-webkit-transform:translateY(15px);-ms-transform:translateY(15px);transform:translateY(15px)}
 @media(min-width:960px){.balloonNav span.bar:after{-webkit-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px)}
 }.social-media{text-align:center;padding:0 30px;margin-top:10vh}
-.social-media a{display:inline-block;text-decoration:none;width:6vh;height:6vh;background:#000;border-radius:100%;color:#FFF;text-align:center;position:relative;font-size:20px;line-height:1;margin:0 1vh}
+.social-media a{display:inline-block;text-decoration:none;width:50px;height:50px;background:#000;border-radius:300px;color:#FFF;text-align:center;position:relative;font-size:20px;line-height:1;margin:0 1vh}
 @media(min-width:860px){.social-media a{font-size:1.3vw}
 }.social-media a.instagram{color:#feeb03}
 .social-media a.linkedin{color:#f9bac0}
