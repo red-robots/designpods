@@ -1942,12 +1942,12 @@ body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradi
 .content-area.post-projects .fullwidth-images .fig-img{margin:0;position:relative}
 .content-area.post-projects .navRevealHelper{position:absolute;bottom:20%;left:0;width:100%;height:25vh}
 .content-area.post-projects #offset-images{width:100%;float:left}
-.content-area.post-projects #subnav{width:100%;position:absolute;left:20px;z-index:999;visibility:hidden;opacity:0;-webkit-transition:all ease .3s;transition:all ease .3s}
+.content-area.post-projects #subnav{width:100%;position:absolute;left:20px;z-index:999;visibility:hidden;opacity:0;-webkit-transition:all ease .3s;transition:all ease .3s;margin-left:2vw}
 @media(min-width:860px){.content-area.post-projects #subnav{top:80px}
 }.content-area.post-projects #subnav .wrapper{max-width:1200px}
-.content-area.post-projects #subnav a{color:#000;font-size:20px;font-weight:600;text-transform:uppercase;text-decoration:none}
+.content-area.post-projects #subnav a{display:inline-block;color:#000;font-size:20px;font-weight:600;text-transform:uppercase;text-decoration:none}
 .content-area.post-projects #subnav a:hover{color:#fcf593}
-.content-area.post-projects .fullwidth-images.show-nav #subnav{visibility:visible;opacity:1;position:fixed;top:70vh}
+.content-area.post-projects .fullwidth-images.show-nav #subnav{visibility:visible;opacity:1;position:fixed;margin-left:0}
 .custom-content-repeater .entry{margin-bottom:50px}
 @media(min-width:960px){.custom-content-repeater .entry{margin-bottom:70px}
 }.custom-content-repeater .entry:last-child{margin-bottom:0}
@@ -1980,7 +1980,8 @@ body.subpage.page-template-page-work #page:after{background:-webkit-linear-gradi
 @media screen and (max-width:860px){.page404-bottom-image.fixed{position:relative}
 .page404-bottom-image.fixed img{display:block;width:100%;height:auto}
 }@media screen and (max-width:860px){body.page-template-page-services .page-inner{padding-bottom:30px}
-}@media(min-width:860px){body.page-template-page-services #page-content.has-bottom-image .col-right{padding-bottom:20vh}
+}@media(min-width:860px){body.page-template-page-services #page-content.has-bottom-image .col-right{padding-bottom:10vh}
+}@media screen and (min-width:1500px){body.page-template-page-services #page-content.has-bottom-image .col-right{padding-bottom:50vh}
 }.site-footer{background-color:#fceaea;position:relative;z-index:20;padding-top:0;padding-bottom:0}
 .site-footer:before{content:"";display:block;width:100%;height:20px;background-color:#fceaea;position:absolute;top:-5px;left:0}
 .site-footer .wrapper{padding-top:33px;padding-bottom:30px}

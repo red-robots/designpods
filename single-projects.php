@@ -90,25 +90,25 @@
 <script>
 jQuery(document).ready(function($){
 
-	$(window).scroll(function(){
-		var screen_width = $(window).width();
-		if(screen_width>820) {
-			var inView1 = elementInViewport( document.getElementById('subNavHelper') );
-		  var inView2 = elementInViewport( document.getElementById('offset-images') );
-		  if(inView1 || inView2) {
-		  	$("#fullwidth-images").addClass('show-nav');
-		  } else {
-		  	$("#fullwidth-images").removeClass('show-nav');
-		  }
-		} else {
-		  if( elementInViewport( document.getElementById('offset-images') ) ) {
-		  	$("#fullwidth-images").addClass('show-nav');
-			} else {
-				$("#fullwidth-images").removeClass('show-nav');
-			}
-		}
+	// $(window).scroll(function(){
+	// 	var screen_width = $(window).width();
+	// 	if(screen_width>820) {
+	// 		var inView1 = elementInViewport( document.getElementById('subNavHelper') );
+	// 	  var inView2 = elementInViewport( document.getElementById('offset-images') );
+	// 	  if(inView1 || inView2) {
+	// 	  	$("#fullwidth-images").addClass('show-nav');
+	// 	  } else {
+	// 	  	$("#fullwidth-images").removeClass('show-nav');
+	// 	  }
+	// 	} else {
+	// 	  if( elementInViewport( document.getElementById('offset-images') ) ) {
+	// 	  	$("#fullwidth-images").addClass('show-nav');
+	// 		} else {
+	// 			$("#fullwidth-images").removeClass('show-nav');
+	// 		}
+	// 	}
 	  
-	});
+	// });
 
 	
 
@@ -127,7 +127,20 @@ jQuery(document).ready(function($){
 
 	}
 
+	if( $('.fig-img.first').length>0 ) {
+		var $window = $(window);
+				distance = $('.fig-img.first').offset().top,
+				distance = distance - 100;
+		
 
+		$window.scroll(function() {
+	    if ( $window.scrollTop() >= distance ) {
+	      $("#fullwidth-images").addClass('show-nav');
+	    } else {
+	    	$("#fullwidth-images").removeClass('show-nav');
+	    }
+		});
+	}
 
 });
 </script>

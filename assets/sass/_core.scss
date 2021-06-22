@@ -1622,9 +1622,7 @@ body.subpage {
 		visibility: hidden;
 		opacity: 0;
 		transition: all ease .3s;
-		// @include mid {
-		// 	margin-top: -10vh;
-		// }
+		margin-left: 2vw;
 		@include tab {
 			top: 80px;
 		}
@@ -1632,6 +1630,7 @@ body.subpage {
 			max-width: 1200px;
 		}
 		a {
+			display: inline-block;
 			color: #000;
 			font-size: 20px;
 			font-weight: 600;
@@ -1647,7 +1646,7 @@ body.subpage {
 			visibility: visible;
 			opacity: 1;
 			position: fixed;
-			top: 70vh;
+			margin-left: 0;
 		}
 	}
 }
@@ -1800,7 +1799,12 @@ body.page-template-page-services {
 	}
 	@include tab {
 		#page-content.has-bottom-image .col-right {
-			padding-bottom: 20vh;
+			padding-bottom: 10vh;
+		}
+	}
+	@include lt(1500px) {
+		#page-content.has-bottom-image .col-right {
+			padding-bottom: 50vh;
 		}
 	}
 }
