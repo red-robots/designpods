@@ -63,7 +63,7 @@ $row1MobileText = ($row1TextMobile) ? $row1TextMobile : $row1Text;
 
 						<?php if ($btn2Link && $btn2Name) { ?>
 						<div class="more">
-							<a href="<?php echo $btn2Link ?>" target="<?php echo $btn2Target ?>" class="more-btn"><?php echo $btn2Name ?></a>
+							<a href="<?php echo $btn2Link ?>" target="<?php echo $btn2Target ?>" class="more-btn more-btn btn-pill white-pink"><?php echo $btn2Name ?></a>
 						</div>
 						<?php } ?>
 						

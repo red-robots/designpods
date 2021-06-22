@@ -282,18 +282,20 @@ a {
 	a {
 		display: inline-block;
 		text-decoration: none;
-		width: 50px;
-		height: 50px;
+		width: 35px;
+		height: 35px;
 		background: #000;
 		border-radius: 300px;
 		color: #FFF;
 		text-align: center;
 		position: relative;
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 1;
 		margin: 0 1vh;
 		@include tab {
-			font-size: 1.3vw;
+			font-size: 20px;
+			width: 40px;
+			height: 40px;
 		}
 		&.instagram {
 			color: $color_yellow2;
@@ -313,6 +315,11 @@ a {
 			background: $color_pink3!important;
 			color: #FFF!important;
 		}
+	}
+}
+#navigation .social-media {
+	a {
+		font-size: 20px;
 	}
 }
 
@@ -564,6 +571,9 @@ body.content-loaded {
 		background-position: 0 0;
 		background-size: cover;
 	}
+	div.more {
+		margin-top: 30px;
+	}
 }
 
 .animatedEl {
@@ -660,13 +670,19 @@ div.more {
 			background: transparent;
 			color: #FFF!important;
 		}
+		&.pink-hover:hover {
+			color: $color_pink2!important;
+			border-color: $color_pink2;
+		}
 	}
 	&.white-yellow {
 		background: #FFF;
-		color: $color_yellow2;
+		// color: $color_yellow1;
+		// border-color: $color_yellow1!important;
 		&:hover {
 			background: transparent;
 			color: #FFF!important;
+			border-color: #FFF!important;
 		}
 	}
 }
@@ -1318,6 +1334,16 @@ body.subpage {
 		}
 	}
 }
+body.page-template-page-about {
+	.page-inner {
+		@include tab {
+			padding-bottom: 5vw;
+		}
+		@include desk {
+			padding-bottom: 8vw;
+		}
+	}
+}
 
 .content-area {
 	position: relative;
@@ -1623,19 +1649,19 @@ body.subpage {
 		opacity: 0;
 		transition: all ease .3s;
 		margin-left: 2vw;
-		@include tab {
-			top: 80px;
-		}
 		.wrapper {
 			max-width: 1200px;
 		}
 		a {
 			display: inline-block;
 			color: #000;
-			font-size: 20px;
+			font-size: 15px;
 			font-weight: 600;
 			text-transform: uppercase;
 			text-decoration: none;
+			@include tab {
+				font-size: 20px;
+			}
 			&:hover {
 				color: $color_primary;
 			}
@@ -1647,6 +1673,10 @@ body.subpage {
 			opacity: 1;
 			position: fixed;
 			margin-left: 0;
+			top: 10vh;
+			@include tab {
+				top: 80px;
+			}
 		}
 	}
 }
@@ -1841,9 +1871,9 @@ body.page-template-page-services {
 			text-align: right;
 		}
 		a {
-			width: 40px;
-			height: 40px;
-			font-size: 20px;
+			width: 30px;
+			height: 30px;
+			font-size: 15px;
 			line-height: 1;
 		}
 	}
