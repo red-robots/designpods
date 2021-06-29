@@ -1809,7 +1809,7 @@ div.more{margin-top:25px}
 .row-5 .box{width:33%;padding:3vw}
 @media(min-width:600px){.row-5 .box{width:33.33%}
 }.row-5 .box img{width:100%;height:auto}
-.row-5 .illustrations{width:100%;float:left;padding-top:60px;padding-bottom:60px}
+.row-5 .illustrations{width:100%;float:left;padding-top:0;padding-bottom:0}
 .row-5 .illustrations .col{width:100%}
 @media(min-width:860px){.row-5 .illustrations .col{width:50%}
 }.row-5 .illustrations .col.graphic{width:100%;position:relative}
@@ -1817,7 +1817,7 @@ div.more{margin-top:25px}
 }.row-5 .illustrations .col.graphic span.star{display:block;width:70px;height:70px;position:absolute;top:10px;right:-10px;z-index:20}
 .row-5 .illustrations .col.graphic span.star svg{width:100%}
 .row-5 .illustrations .col.graphic img{width:100%;height:auto;position:relative;left:20%;-webkit-transform:translateY(-20%);-ms-transform:translateY(-20%);transform:translateY(-20%)}
-@media(min-width:860px){.row-5 .illustrations .col.graphic img{width:250%;left:-5vw;-webkit-transform:none;-ms-transform:none;transform:none}
+@media(min-width:860px){.row-5 .illustrations .col.graphic img{width:100vw;left:-25vw;-webkit-transform:none;-ms-transform:none;transform:none}
 }.row-5 .illustrations .col.text{width:100%;position:relative;z-index:10;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 @media(min-width:860px){.row-5 .illustrations .col.text{width:65%;padding-left:0}
 }.row-5 .illustrations .col.text .wrap{width:100%}

@@ -945,8 +945,8 @@ div.more {
 	.illustrations {
 		width: 100%;
 		float: left;
-		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-top: 0;
+		padding-bottom: 0;
 		.col {
 			width: 100%;
 			@include tab {
@@ -981,8 +981,8 @@ div.more {
 					left: 20%;
 					transform: translateY(-20%);
 					@include tab {
-						width: 250%;
-						left: -5vw;
+						width: 100vw;
+						left: -25vw;
 						transform: none;
 					}
 				}
