@@ -48,9 +48,9 @@ $row1MobileText = ($row1TextMobile) ? $row1TextMobile : $row1Text;
 				
 				<div class="col left">
 
-					<div id="thinking-svg-mobile" class="animated fadeIn"></div>
+					<div id="thinking-svg-mobile" class="no-animate"></div>
 
-					<div class="wrap wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+					<div class="wrap" data-wow-duration="0.5s" data-wow-delay="0.5s">
 						
 						
 						<?php if ($row2_title) { ?>
@@ -73,7 +73,7 @@ $row1MobileText = ($row1TextMobile) ? $row1TextMobile : $row1Text;
 				<?php $row2_svg = get_field("row2_svg"); ?>
 				<?php if ($row2_svg) { ?>
 				<div id="thinking-svg-desktop" class="col right animatedEl">
-					<div class="thinking wow fadeInRight" data-wow-duration="0.6s" data-wow-delay="0.8s">
+					<div class="thinking" data-wow-duration="0.6s" data-wow-delay="0.8s">
 						<img src="<?php echo $row2_svg['url'] ?>" alt="<?php echo $row2_svg['title'] ?>">
 						<?php  //include( locate_template('images/svg/me_thinking.svg') );  ?>
 					</div>
@@ -150,16 +150,16 @@ $featured_projects = get_field("featured_projects");
 		$row4_svg = get_field("row4_svg"); 
 		?>
 		<div class="illustration-logo">
-			<span class="top-star wow zoomIn"></span>
+			<span class="top-star"></span>
 			<div class="flexwrap">
 				<?php if($row4_svg) { ?>
-				<div class="col graphic wow fadeIn" data-wow-delay="0.5s">
+				<div class="col graphic">
 					<img src="<?php echo $row4_svg['url'] ?>" alt="<?php echo $row4_svg['title'] ?>" class="img-type">
 				</div>
 				<?php } ?>
 
 				<?php if ($row4_group) { ?>
-				<div class="col text wow fadeIn" data-wow-delay="0.7s">
+				<div class="col text">
 
 					<?php if ( isset($row4_group['title']) && $row4_group['title'] ) { ?>
 						<h2 class="h2 font2"><?php echo $row4_group['title'] ?></h2>
@@ -208,13 +208,13 @@ $row5BrandsMobile = ( isset($row5Clients['brands_mobile']) && $row5Clients['bran
 			<div class="flexwrap">
 
 				<?php if($row5Image) { ?>
-				<div class="col graphic wow fadeIn" data-wow-delay="0.4s">
+				<div class="col graphic">
 					<img src="<?php echo $row5Image['url'] ?>" alt="<?php echo $row5Image['title'] ?>" class="img-type">
 				</div>
 				<?php } ?>
 
 				<?php if ( $row5Title || $row5Brands ) { ?>
-				<div class="col text wow fadeIn" data-wow-delay="0.4s">
+				<div class="col text">
 					<div class="wrap">
 
 						<?php if ($row5Title) { ?>
