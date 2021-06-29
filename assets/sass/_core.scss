@@ -920,6 +920,10 @@ div.more {
 		padding-left: 0;
 		padding-right: 0;
 		font-size: 5.2vw;
+		@include gt(500px) {
+			font-size: 50px;
+			line-height: 1.1;
+		}
 	}
 	.flexwrap.projects {
 		margin-left: -3vw;
@@ -1383,7 +1387,7 @@ body.subpage {
 				width: 50%;
 			}
 			@include gt($tabwidth) {
-				height: 35%;
+				height: 100%;
 			}
 		}
 		.content-area .page-content-mirror,
@@ -2012,6 +2016,11 @@ body.page-template-page-services {
 		.illustrations .col.graphic img {
 			left: 0;
 			width: 200%;
+			@include gt(500px) {
+				top: 5vh;
+				left: -30vw;
+				width: 350%;
+			}
 		}
 	}
 	.row-6 {

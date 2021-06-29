@@ -1804,7 +1804,8 @@ div.more{margin-top:25px}
 }.row-4 .more-btn.get-started:hover{color:#FFF}
 .row-5{position:relative;background:#FFF;z-index:14;padding-top:50px;padding-bottom:50px;text-align:center}
 .row-5 .h2{padding-left:0;padding-right:0;font-size:5.2vw}
-.row-5 .flexwrap.projects{margin-left:-3vw;margin-right:-3vw;z-index:5;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+@media screen and (max-width:500px){.row-5 .h2{font-size:50px;line-height:1.1}
+}.row-5 .flexwrap.projects{margin-left:-3vw;margin-right:-3vw;z-index:5;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .row-5 .box{width:33%;padding:3vw}
 @media(min-width:600px){.row-5 .box{width:33.33%}
 }.row-5 .box img{width:100%;height:auto}
@@ -1897,7 +1898,7 @@ body.subpage .logo a img{width:100%;height:auto}
 }body.subpage #page{width:100%;float:left;overflow:hidden}
 body.subpage #page:after{content:"";display:block;height:100%;width:100%;position:absolute;top:0;left:0;background:-webkit-linear-gradient(top,rgba(252,234,234,0.65) 0,transparent 100%);background:linear-gradient(to bottom,rgba(252,234,234,0.65) 0,transparent 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6fceaea',endColorstr='#00000000',GradientType=0)}
 @media(min-width:960px){body.subpage #page:after{width:50%}
-}@media screen and (max-width:860px){body.subpage #page:after{height:35%}
+}@media screen and (max-width:860px){body.subpage #page:after{height:100%}
 }body.subpage #page .content-area .page-content-mirror,body.subpage #page .sp-flexwrap .col-right,body.subpage #page .page-inner{background:transparent}
 @media screen and (max-width:860px){body.subpage #page .sp-flexwrap .col-right{padding-bottom:0 !important}
 }body.subpage #primary{position:relative;z-index:10}
@@ -2025,7 +2026,8 @@ html,body,.site{height:auto}
 .row-5 .hidden-xs{display:none}
 .row-5 .clients img.all.visible-xs{display:block;width:80%;margin:0 auto}
 .row-5 .illustrations .col.graphic img{left:0;width:200%}
-.row-6{text-align:center}
+}@media screen and (max-width:820px) and (max-width:500px){.row-5 .illustrations .col.graphic img{top:5vh;left:-30vw;width:350%}
+}@media screen and (max-width:820px){.row-6{text-align:center}
 .row-6 .graphic.mobile{margin-bottom:30px}
 .row-6 .graphic.mobile img{display:block;width:80%;height:auto;margin:0 auto;float:none}
 .row-6 .visible-xs{display:block}
