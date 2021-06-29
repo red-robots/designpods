@@ -150,6 +150,12 @@ $wrapper: 1300px;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f190', endColorstr='#00ffffff',GradientType=0 );
 }
 
+@mixin orange_gradient() {
+	background: -webkit-linear-gradient(top, #FEEABF 0%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to bottom, #FEEABF 0%, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEEABF', endColorstr='#00ffffff',GradientType=0 );
+}
+
 @mixin custom_dashed() {
 	background-image: url("data:image/svg+xml,%3csvg width='100%30' height='100%30' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%30' height='100%30' fill='none' stroke='%23333' stroke-width='3' stroke-dasharray='5%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
