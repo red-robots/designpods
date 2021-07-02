@@ -454,9 +454,9 @@ body.content-loaded {
 		text-align: center;
 		&.fixed {
 			position: fixed;
-			top: 50%;
+			top: 40%;
 			left: 0;
-			transform: translateY(-50%);
+			transform: translateY(-40%);
 		}
 		.inline {
 			display: inline-block;
@@ -494,7 +494,7 @@ body.content-loaded {
 			visibility: visible;
 		}
 		@include tab {
-			top: 40vh;
+			top: 25vh;
 			left: 0;
 		}
 		img.balloon-logo {
@@ -516,6 +516,18 @@ body.content-loaded {
 				width: 300px;
 			}
 		}
+	}
+	.balloon-hero {
+		width: 100%;
+		height: 28vh;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background-image: url('images/balloon_hero.png');
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+		z-index: 90;
 	}
 }
 
@@ -543,7 +555,8 @@ body.content-loaded {
 	.wrapper {
 		position: relative;
 		z-index: 12;
-		padding-top: 250px;
+		// padding-top: 250px;
+		padding-top: 5vh;
 		padding-bottom: 100px;
 	}
 	.col {

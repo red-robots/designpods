@@ -27,6 +27,7 @@ $row1MobileText = ($row1TextMobile) ? $row1TextMobile : $row1Text;
 	<div class="balloondiv">
 		<img class="balloon-logo" src="<?php imageDIR('balloon_logo.png') ?>" alt="Logo" />
 	</div>
+	<div class="balloon-hero"></div>
 </div>
 
 
@@ -42,7 +43,7 @@ $row1MobileText = ($row1TextMobile) ? $row1TextMobile : $row1Text;
 <?php if ($row2_title || $row2_text) { ?>
 <div class="row-2 w100 para" data-pos-x="left" data-parallax="1" data-src="<?php imageDIR('yellow.png') ?>">
 	<div class="row-inner">
-		<div class="balloon-hero"></div>
+		<!-- <div class="balloon-hero"></div> -->
 		<div class="wrapper sm">
 			<div class="flexwrap">
 				
