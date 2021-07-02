@@ -210,6 +210,7 @@ $row5BrandsMobile = ( isset($row5Clients['brands_mobile']) && $row5Clients['bran
 
 				<?php if($row5Image) { ?>
 				<div class="col graphic">
+					<span class="squiggle"></span>
 					<img src="<?php echo $row5Image['url'] ?>" alt="<?php echo $row5Image['title'] ?>" class="img-type">
 				</div>
 				<?php } ?>

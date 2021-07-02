@@ -1821,6 +1821,8 @@ div.more{margin-top:25px}
 .row-5 .illustrations .col.graphic span.star svg{width:100%}
 .row-5 .illustrations .col.graphic img{width:100%;height:auto;position:relative;left:20%;-webkit-transform:translateY(-20%);-ms-transform:translateY(-20%);transform:translateY(-20%)}
 @media(min-width:860px){.row-5 .illustrations .col.graphic img{width:100vw;left:-25vw;-webkit-transform:none;-ms-transform:none;transform:none}
+}.row-5 .illustrations .col.graphic .squiggle{display:inline-block;width:60px;height:60px;background-image:url("images/svg/asterisk-triangle.svg");background-position:center;background-repeat:no-repeat;position:absolute;top:0;left:70vw;z-index:5}
+@media(min-width:600px){.row-5 .illustrations .col.graphic .squiggle{width:80px;height:80px;top:10vh;left:10vw}
 }.row-5 .illustrations .col.text{width:100%;position:relative;z-index:10;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 @media(min-width:860px){.row-5 .illustrations .col.text{width:65%;padding-left:0}
 }.row-5 .illustrations .col.text .wrap{width:100%}
