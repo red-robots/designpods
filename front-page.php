@@ -180,7 +180,7 @@ $featured_projects = get_field("featured_projects");
 						$r4BtnTarget = ( isset($r4Btn['target']) && $r4Btn['target'] ) ? $r4Btn['target'] : '_self';
 						?>
 						<div class="more">
-							<a href="<?php echo $r4BtnLink ?>" target="<?php echo $r4BtnTarget ?>" class="more-btn get-started"><?php echo $r4BtnName ?> <span class="icon"><i class="fab fa-telegram-plane"></i></span></a>
+							<a href="<?php echo $r4BtnLink ?>" target="<?php echo $r4BtnTarget ?>" class="more-btn btn-pill white-pink get-started"><?php echo $r4BtnName ?> <span class="icon"><i class="fab fa-telegram-plane"></i></span></a>
 						</div>
 					<?php } ?>
 
