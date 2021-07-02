@@ -1838,7 +1838,7 @@ div.more{margin-top:25px}
 @media(min-width:600px){.row-6 .skills .services-list ul{-webkit-column-count:3;-moz-column-count:3;column-count:3}
 }.row-6 .graphic{width:100%}
 @media(min-width:860px){.row-6 .graphic{width:40%}
-}.row-6 .graphic img,.row-6 .graphic svg{width:100%;float:left}
+}.row-6 .graphic img,.row-6 .graphic svg{width:100%;float:left;position:relative;bottom:-15px}
 .row-6 div.more a:hover{color:#fbf396}
 body.hide-row-1 .row-1 .titlediv .row1-title{opacity:0;-webkit-transform:translateY(-10vh);-ms-transform:translateY(-10vh);transform:translateY(-10vh)}
 body.open-menu #page{overflow:hidden}

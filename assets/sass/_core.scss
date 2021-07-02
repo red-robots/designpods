@@ -1106,6 +1106,8 @@ div.more {
 		img, svg {
 			width: 100%;
 			float: left;
+			position: relative;
+			bottom: -15px;
 		}
 	}
 	div.more {
