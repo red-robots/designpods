@@ -1374,6 +1374,23 @@ body.subpage {
 		// overflow-x: hidden;
 		// overflow-y: auto;
 		overflow: hidden;
+		&:before {
+			content:"";
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			@include pink_gradient();
+			@include mid {
+				width: 50%;
+			}
+			@include gt($tabwidth) {
+				height: 100%;
+			}
+		}
 		&:after {
 			content:"";
 			display: block;
@@ -1382,7 +1399,7 @@ body.subpage {
 			position: absolute;
 			top: 0;
 			left: 0;
-			@include pink_gradient();
+			background-color: #FFF;
 			@include mid {
 				width: 50%;
 			}
@@ -1413,22 +1430,23 @@ body.subpage {
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_green', endColorstr='#00000000',GradientType=0 );
 		}
 	}
-	&.page-template-page-about {
+	&.page-template-page-services {
 		#page {
-			&:after {
-				@include yellow_gradient();
+			&:before {
+				@include green_gradient();
 			}
 		}
 	}
-	&.page-template-page-work {
+	&.page-template-page-about {
 		#page {
-			&:after {
+			&:before {
+				// @include yellow_gradient();
 				@include pink_gradient();
 			}
 		}
 	}
 	&.page-template-page-work {
-		#page:after {
+		#page:before {
 			@include orange_gradient();
 		}
 	}
