@@ -132,11 +132,12 @@ pre {
 // 	overflow-y: auto;
 // }
 html,body,.site {
-	height: 100%;
+	// height: 100%;
 	position: relative;
 }
 .site {
-
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 body {
 	font-family: $font_primary;
@@ -437,6 +438,7 @@ body.content-loaded {
 	height: 100vh;
 	background: $color_pink1;
 	overflow: hidden;
+	position: relative;
 	.text,.wrapper {
 		height: 100%;
 	}
@@ -770,6 +772,22 @@ div.more {
 			font-size: 5.2vw;
 			font-weight: 400;
 			line-height: 1.1;
+			position: relative;
+			&.has-bottom-arrow {
+				&:after {
+					content: "";
+					display: inline-block;
+					width: 100px;
+					height: 100px;
+					background-image: url('images/squiggles/svg/animated/arrow_animate.svg');
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					position: absolute;
+					margin-top: 60px;
+					margin-left: -30p
+				}
+			}
 		}
 	}
 	.doughnut-graphic {
@@ -812,7 +830,7 @@ div.more {
 		top: -2px;
 		left: 0;
 		@include xs {
-			height: 20vh;
+			height: 15vh;
 		}
 	}
 	.flexwrap.projects {

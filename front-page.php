@@ -105,7 +105,7 @@ if($row3_image || $row3_text) { ?>
 			<?php if ($row3_text) { ?>
 			<div class="col right">
 				<div class="text font2 fadeIn wow">
-					<h2><?php echo $row3_text ?></h2>
+					<h2 class="has-bottom-arrow"><?php echo $row3_text ?></h2>
 				</div>
 			</div>
 			<?php } ?>
