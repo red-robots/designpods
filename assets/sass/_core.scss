@@ -2172,11 +2172,6 @@ body.page-template-page-services {
 }
 body.single-projects {
 	@include gt($tabwidth) {
-		.col-right.pagetext {
-			.page-inner {
-				padding-top: 0;
-			}
-		}
 		.go-back-mobile {
 			display: inline-block;
 		}
@@ -2185,7 +2180,23 @@ body.single-projects {
 		}
 	}
 }
-
+body.subpage {
+	@include gt($tabwidth) {
+		h1.page-title {
+			margin-bottom: 20px;
+		}
+		#primary .page-inner {
+			padding-top: 5px;
+		}
+	}
+}
+body.subpage.page-template-page-services {
+	@include gt($tabwidth) {
+		#primary .page-inner {
+			padding-top: 25px;
+		}
+	}
+}
 /* landscape */
 @media screen and (min-width:480px) and (max-width: 820px){
 	.row-4 .box {
