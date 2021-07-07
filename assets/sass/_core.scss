@@ -136,8 +136,8 @@ html,body,.site {
 	position: relative;
 }
 .site {
-	overflow-x: hidden;
-	overflow-y: auto;
+	// overflow-x: hidden;
+	// overflow-y: auto;
 }
 body {
 	font-family: $font_primary;
@@ -184,7 +184,7 @@ a {
 	}
 	@include tab {
 		top: 70px;
-		right: 20px;
+		right: 5vw;
 		width: 120px;
 		height: 120px;
 	}
@@ -282,8 +282,8 @@ a {
 	a {
 		display: inline-block;
 		text-decoration: none;
-		width: 35px;
-		height: 35px;
+		width: 45px;
+		height: 45px;
 		background: #000;
 		border-radius: 300px;
 		color: #FFF;
@@ -291,11 +291,11 @@ a {
 		position: relative;
 		font-size: 18px;
 		line-height: 1;
-		margin: 0 1vh;
+		margin: 0 5px;
 		@include tab {
 			font-size: 20px;
-			width: 40px;
-			height: 40px;
+			width: 45px;
+			height: 45px;
 		}
 		&.instagram {
 			color: $color_yellow2;
@@ -319,7 +319,7 @@ a {
 }
 #navigation .social-media {
 	a {
-		font-size: 20px;
+		font-size: 25px;
 	}
 }
 
@@ -830,7 +830,8 @@ div.more {
 		top: -2px;
 		left: 0;
 		@include xs {
-			height: 15vh;
+			// height: 15vh;
+			height: 17.5%;
 		}
 	}
 	.flexwrap.projects {
@@ -1151,6 +1152,11 @@ body.open-menu {
 		}
 	}
 }
+body.home #siteMenu {
+	@include tab {
+		right: 10vw;
+	}
+}
 body.scrolled {
 	.row1-title {
 		transform: translateY(5%);
@@ -1175,9 +1181,16 @@ body.subpage {
 	}
 	.logo {
 		text-align: center;
+		margin-bottom: 10px;
+		@include tab {
+			margin-bottom: 0;
+		}
 		a {
 			display: inline-block;
-			width: 70px;
+			width: 45px;
+			@include tab {
+				width: 70px;
+			}
 			img {
 				width: 100%;
 				height: auto;
@@ -1948,9 +1961,9 @@ body.page-template-page-services {
 			text-align: right;
 		}
 		a {
-			width: 30px;
-			height: 30px;
-			font-size: 15px;
+			width: 45px;
+			height: 45px;
+			font-size: 25px;
 			line-height: 1;
 		}
 	}
@@ -1998,7 +2011,7 @@ body.page-template-page-services {
 		height: auto;
 	}
 	.row-1 {
-		height: 45vh;
+		height: 100vh;
 		position: relative;
 		#row1-title {display: none;}
 		#row1-title-mobile {
@@ -2019,6 +2032,10 @@ body.page-template-page-services {
 			width: 80vw;
 			font-size: 18vw;
 		}
+		.balloon-hero {
+			background-position: center;
+			bottom: -5vh;
+		}
 	}
 	.row-2 {
 		text-align: center;
@@ -2027,7 +2044,7 @@ body.page-template-page-services {
 	    background-size: 270%;
 		}
 		.wrapper {
-			padding-top: 150px;
+			padding-top: 0;
 			padding-bottom: 50px;
 			padding-left: 30px;
 			padding-right: 30px;
@@ -2132,6 +2149,35 @@ body.page-template-page-services {
 			width: 80%;
 			height: auto;
 			margin: 0 auto;
+		}
+	}
+}
+.go-back-mobile {
+	display: none;
+	width: 40px;
+	height: 25px;
+	background-image:url('images/svg/arrow-left.svg');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: fixed;
+	top: 12vh;
+	left: 30px;
+	z-index: 200;
+	span {display:none;}
+}
+body.single-projects {
+	@include gt($tabwidth) {
+		.col-right.pagetext {
+			.page-inner {
+				padding-top: 0;
+			}
+		}
+		.go-back-mobile {
+			display: inline-block;
+		}
+		#subnav {
+			display: none;
 		}
 	}
 }

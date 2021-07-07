@@ -7,6 +7,8 @@
 
 		<div id="page-content" class="sp-flexwrap">
 
+			<a href="<?php echo get_site_url() ?>/work/" class="go-back-mobile animated fadeIn"><span>&larr;</span></a>
+
 			<div class="col-left">
 
 				<?php get_template_part("parts/subpage-logo"); ?>
