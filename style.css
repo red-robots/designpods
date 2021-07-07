@@ -6909,11 +6909,11 @@ body.open-menu #page {
     body.open-menu #page {
       overflow: auto; } }
 
-@media screen and (min-width: 1511px) {
+@media screen and (min-width: 1601px) {
   body.home #siteMenu {
     right: 7vw; } }
 
-@media screen and (min-width: 1300px) and (max-width: 1510px) {
+@media screen and (min-width: 1300px) and (max-width: 1600px) {
   body.home #siteMenu {
     right: 2vw; } }
 

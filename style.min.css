@@ -1844,8 +1844,8 @@ div.more{margin-top:25px}
 body.hide-row-1 .row-1 .titlediv .row1-title{opacity:0;-webkit-transform:translateY(-10vh);-ms-transform:translateY(-10vh);transform:translateY(-10vh)}
 body.open-menu #page{overflow:hidden}
 @media(min-width:860px){body.open-menu #page{overflow:auto}
-}@media screen and (min-width:1511px){body.home #siteMenu{right:7vw}
-}@media screen and (min-width:1300px) and (max-width:1510px){body.home #siteMenu{right:2vw}
+}@media screen and (min-width:1601px){body.home #siteMenu{right:7vw}
+}@media screen and (min-width:1300px) and (max-width:1600px){body.home #siteMenu{right:2vw}
 }body.scrolled .row1-title{-webkit-transform:translateY(5%);-ms-transform:translateY(5%);transform:translateY(5%)}
 body.subpage .site,body.subpage #primary{height:auto}
 body.subpage h1.page-title{font-family:moret,serif;font-size:4rem;line-height:1.2;margin:0 0 30px}
