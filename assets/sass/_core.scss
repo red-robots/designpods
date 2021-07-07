@@ -1154,10 +1154,10 @@ body.open-menu {
 	}
 }
 body.home #siteMenu {
-	@include tab {
-		right: 6vw;
+	@media screen and (min-width: 1511px) {
+		right: 7vw;
 	}
-	@media screen and (min-width: 1200px) and (max-width: 1440px) {
+	@media screen and (min-width: 1300px) and (max-width: 1510px) {
 		right: 2vw;
 	}
 }
