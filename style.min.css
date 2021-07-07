@@ -1845,6 +1845,7 @@ body.hide-row-1 .row-1 .titlediv .row1-title{opacity:0;-webkit-transform:transla
 body.open-menu #page{overflow:hidden}
 @media(min-width:860px){body.open-menu #page{overflow:auto}
 }@media(min-width:860px){body.home #siteMenu{right:6vw}
+}@media screen and (min-width:1200px) and (max-width:1440px){body.home #siteMenu{right:2vw}
 }body.scrolled .row1-title{-webkit-transform:translateY(5%);-ms-transform:translateY(5%);transform:translateY(5%)}
 body.subpage .site,body.subpage #primary{height:auto}
 body.subpage h1.page-title{font-family:moret,serif;font-size:4rem;line-height:1.2;margin:0 0 30px}

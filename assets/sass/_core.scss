@@ -1157,6 +1157,9 @@ body.home #siteMenu {
 	@include tab {
 		right: 6vw;
 	}
+	@media screen and (min-width: 1200px) and (max-width: 1440px) {
+		right: 2vw;
+	}
 }
 body.scrolled {
 	.row1-title {
